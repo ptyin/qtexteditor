@@ -1,4 +1,0 @@
-/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir
-/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX_autogen.dir
