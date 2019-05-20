@@ -16,26 +16,26 @@ find_package(Qt5 COMPONENTS Core Widgets Gui Sql REQUIRED)
 
 # Populate a CMake variable with the sources
 set(SOURCELIST
-        exam.ui
-        exam.cpp
-        exam.h
-        login.ui
-        login.cpp
-        login.h
-        main.cpp
-        passwdedit.ui
-        passwdedit.cpp
-        passwdedit.h
-        register.ui
-        register.cpp
-        register.h
-        editor.ui
-        editor.cpp
-        editor.h
-        systemtrayicon.cpp
-        systemtrayicon.h
+        src/exam.ui
+        src/exam.cpp
+        src/exam.h
+        src/login.ui
+        src/login.cpp
+        src/login.h
+        src/main.cpp
+        src/passwdedit.ui
+        src/passwdedit.cpp
+        src/passwdedit.h
+        src/register.ui
+        src/register.cpp
+        src/register.h
+        src/editor.ui
+        src/editor.cpp
+        src/editor.h
+        src/systemtrayicon.cpp
+        src/systemtrayicon.h
         )
-qt5_add_resources(SOURCELIST lang.qrc myqrc.qrc qss.qrc)
+qt5_add_resources(SOURCELIST resources/lang.qrc resources/myqrc.qrc resources/qss.qrc)
 # Tell CMake to create the QTLaTeX executable
 add_executable(QtLaTeX ${SOURCELIST})
 # Use the Widgets module from Qt 5

@@ -11,9 +11,9 @@ set(CMAKE_MAKEFILE_DEPENDS
   "CMakeFiles/3.13.4/CMakeCCompiler.cmake"
   "CMakeFiles/3.13.4/CMakeCXXCompiler.cmake"
   "CMakeFiles/3.13.4/CMakeSystem.cmake"
-  "../lang.qrc"
-  "../myqrc.qrc"
-  "../qss.qrc"
+  "../resources/lang.qrc"
+  "../resources/myqrc.qrc"
+  "../resources/qss.qrc"
   "/home/peter/Qt5.12.1/5.12.1/gcc_64/lib/cmake/Qt5/Qt5Config.cmake"
   "/home/peter/Qt5.12.1/5.12.1/gcc_64/lib/cmake/Qt5/Qt5ConfigVersion.cmake"
   "/home/peter/Qt5.12.1/5.12.1/gcc_64/lib/cmake/Qt5/Qt5ModuleLocation.cmake"
@@ -100,9 +100,9 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
-  "lang.qrc.depends"
-  "myqrc.qrc.depends"
-  "qss.qrc.depends"
+  "resources/lang.qrc.depends"
+  "resources/myqrc.qrc.depends"
+  "resources/qss.qrc.depends"
   "CMakeFiles/QtLaTeX_autogen.dir/AutogenInfo.cmake"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )

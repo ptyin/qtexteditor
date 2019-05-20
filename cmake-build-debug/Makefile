@@ -163,141 +163,6 @@ QtLaTeX_autogen/mocs_compilation.cpp.s:
 	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/QtLaTeX_autogen/mocs_compilation.cpp.s
 .PHONY : QtLaTeX_autogen/mocs_compilation.cpp.s
 
-editor.o: editor.cpp.o
-
-.PHONY : editor.o
-
-# target to build an object file
-editor.cpp.o:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/editor.cpp.o
-.PHONY : editor.cpp.o
-
-editor.i: editor.cpp.i
-
-.PHONY : editor.i
-
-# target to preprocess a source file
-editor.cpp.i:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/editor.cpp.i
-.PHONY : editor.cpp.i
-
-editor.s: editor.cpp.s
-
-.PHONY : editor.s
-
-# target to generate assembly for a file
-editor.cpp.s:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/editor.cpp.s
-.PHONY : editor.cpp.s
-
-exam.o: exam.cpp.o
-
-.PHONY : exam.o
-
-# target to build an object file
-exam.cpp.o:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/exam.cpp.o
-.PHONY : exam.cpp.o
-
-exam.i: exam.cpp.i
-
-.PHONY : exam.i
-
-# target to preprocess a source file
-exam.cpp.i:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/exam.cpp.i
-.PHONY : exam.cpp.i
-
-exam.s: exam.cpp.s
-
-.PHONY : exam.s
-
-# target to generate assembly for a file
-exam.cpp.s:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/exam.cpp.s
-.PHONY : exam.cpp.s
-
-login.o: login.cpp.o
-
-.PHONY : login.o
-
-# target to build an object file
-login.cpp.o:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/login.cpp.o
-.PHONY : login.cpp.o
-
-login.i: login.cpp.i
-
-.PHONY : login.i
-
-# target to preprocess a source file
-login.cpp.i:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/login.cpp.i
-.PHONY : login.cpp.i
-
-login.s: login.cpp.s
-
-.PHONY : login.s
-
-# target to generate assembly for a file
-login.cpp.s:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/login.cpp.s
-.PHONY : login.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/main.cpp.s
-.PHONY : main.cpp.s
-
-passwdedit.o: passwdedit.cpp.o
-
-.PHONY : passwdedit.o
-
-# target to build an object file
-passwdedit.cpp.o:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/passwdedit.cpp.o
-.PHONY : passwdedit.cpp.o
-
-passwdedit.i: passwdedit.cpp.i
-
-.PHONY : passwdedit.i
-
-# target to preprocess a source file
-passwdedit.cpp.i:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/passwdedit.cpp.i
-.PHONY : passwdedit.cpp.i
-
-passwdedit.s: passwdedit.cpp.s
-
-.PHONY : passwdedit.s
-
-# target to generate assembly for a file
-passwdedit.cpp.s:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/passwdedit.cpp.s
-.PHONY : passwdedit.cpp.s
-
 qrc_lang.o: qrc_lang.cpp.o
 
 .PHONY : qrc_lang.o
@@ -379,59 +244,194 @@ qrc_qss.cpp.s:
 	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/qrc_qss.cpp.s
 .PHONY : qrc_qss.cpp.s
 
-register.o: register.cpp.o
+src/editor.o: src/editor.cpp.o
 
-.PHONY : register.o
-
-# target to build an object file
-register.cpp.o:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/register.cpp.o
-.PHONY : register.cpp.o
-
-register.i: register.cpp.i
-
-.PHONY : register.i
-
-# target to preprocess a source file
-register.cpp.i:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/register.cpp.i
-.PHONY : register.cpp.i
-
-register.s: register.cpp.s
-
-.PHONY : register.s
-
-# target to generate assembly for a file
-register.cpp.s:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/register.cpp.s
-.PHONY : register.cpp.s
-
-systemtrayicon.o: systemtrayicon.cpp.o
-
-.PHONY : systemtrayicon.o
+.PHONY : src/editor.o
 
 # target to build an object file
-systemtrayicon.cpp.o:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/systemtrayicon.cpp.o
-.PHONY : systemtrayicon.cpp.o
+src/editor.cpp.o:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/editor.cpp.o
+.PHONY : src/editor.cpp.o
 
-systemtrayicon.i: systemtrayicon.cpp.i
+src/editor.i: src/editor.cpp.i
 
-.PHONY : systemtrayicon.i
+.PHONY : src/editor.i
 
 # target to preprocess a source file
-systemtrayicon.cpp.i:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/systemtrayicon.cpp.i
-.PHONY : systemtrayicon.cpp.i
+src/editor.cpp.i:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/editor.cpp.i
+.PHONY : src/editor.cpp.i
 
-systemtrayicon.s: systemtrayicon.cpp.s
+src/editor.s: src/editor.cpp.s
 
-.PHONY : systemtrayicon.s
+.PHONY : src/editor.s
 
 # target to generate assembly for a file
-systemtrayicon.cpp.s:
-	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/systemtrayicon.cpp.s
-.PHONY : systemtrayicon.cpp.s
+src/editor.cpp.s:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/editor.cpp.s
+.PHONY : src/editor.cpp.s
+
+src/exam.o: src/exam.cpp.o
+
+.PHONY : src/exam.o
+
+# target to build an object file
+src/exam.cpp.o:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/exam.cpp.o
+.PHONY : src/exam.cpp.o
+
+src/exam.i: src/exam.cpp.i
+
+.PHONY : src/exam.i
+
+# target to preprocess a source file
+src/exam.cpp.i:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/exam.cpp.i
+.PHONY : src/exam.cpp.i
+
+src/exam.s: src/exam.cpp.s
+
+.PHONY : src/exam.s
+
+# target to generate assembly for a file
+src/exam.cpp.s:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/exam.cpp.s
+.PHONY : src/exam.cpp.s
+
+src/login.o: src/login.cpp.o
+
+.PHONY : src/login.o
+
+# target to build an object file
+src/login.cpp.o:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/login.cpp.o
+.PHONY : src/login.cpp.o
+
+src/login.i: src/login.cpp.i
+
+.PHONY : src/login.i
+
+# target to preprocess a source file
+src/login.cpp.i:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/login.cpp.i
+.PHONY : src/login.cpp.i
+
+src/login.s: src/login.cpp.s
+
+.PHONY : src/login.s
+
+# target to generate assembly for a file
+src/login.cpp.s:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/login.cpp.s
+.PHONY : src/login.cpp.s
+
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
+src/passwdedit.o: src/passwdedit.cpp.o
+
+.PHONY : src/passwdedit.o
+
+# target to build an object file
+src/passwdedit.cpp.o:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/passwdedit.cpp.o
+.PHONY : src/passwdedit.cpp.o
+
+src/passwdedit.i: src/passwdedit.cpp.i
+
+.PHONY : src/passwdedit.i
+
+# target to preprocess a source file
+src/passwdedit.cpp.i:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/passwdedit.cpp.i
+.PHONY : src/passwdedit.cpp.i
+
+src/passwdedit.s: src/passwdedit.cpp.s
+
+.PHONY : src/passwdedit.s
+
+# target to generate assembly for a file
+src/passwdedit.cpp.s:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/passwdedit.cpp.s
+.PHONY : src/passwdedit.cpp.s
+
+src/register.o: src/register.cpp.o
+
+.PHONY : src/register.o
+
+# target to build an object file
+src/register.cpp.o:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/register.cpp.o
+.PHONY : src/register.cpp.o
+
+src/register.i: src/register.cpp.i
+
+.PHONY : src/register.i
+
+# target to preprocess a source file
+src/register.cpp.i:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/register.cpp.i
+.PHONY : src/register.cpp.i
+
+src/register.s: src/register.cpp.s
+
+.PHONY : src/register.s
+
+# target to generate assembly for a file
+src/register.cpp.s:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/register.cpp.s
+.PHONY : src/register.cpp.s
+
+src/systemtrayicon.o: src/systemtrayicon.cpp.o
+
+.PHONY : src/systemtrayicon.o
+
+# target to build an object file
+src/systemtrayicon.cpp.o:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/systemtrayicon.cpp.o
+.PHONY : src/systemtrayicon.cpp.o
+
+src/systemtrayicon.i: src/systemtrayicon.cpp.i
+
+.PHONY : src/systemtrayicon.i
+
+# target to preprocess a source file
+src/systemtrayicon.cpp.i:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/systemtrayicon.cpp.i
+.PHONY : src/systemtrayicon.cpp.i
+
+src/systemtrayicon.s: src/systemtrayicon.cpp.s
+
+.PHONY : src/systemtrayicon.s
+
+# target to generate assembly for a file
+src/systemtrayicon.cpp.s:
+	$(MAKE) -f CMakeFiles/QtLaTeX.dir/build.make CMakeFiles/QtLaTeX.dir/src/systemtrayicon.cpp.s
+.PHONY : src/systemtrayicon.cpp.s
 
 # Help Target
 help:
@@ -446,21 +446,6 @@ help:
 	@echo "... QtLaTeX_autogen/mocs_compilation.o"
 	@echo "... QtLaTeX_autogen/mocs_compilation.i"
 	@echo "... QtLaTeX_autogen/mocs_compilation.s"
-	@echo "... editor.o"
-	@echo "... editor.i"
-	@echo "... editor.s"
-	@echo "... exam.o"
-	@echo "... exam.i"
-	@echo "... exam.s"
-	@echo "... login.o"
-	@echo "... login.i"
-	@echo "... login.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
-	@echo "... passwdedit.o"
-	@echo "... passwdedit.i"
-	@echo "... passwdedit.s"
 	@echo "... qrc_lang.o"
 	@echo "... qrc_lang.i"
 	@echo "... qrc_lang.s"
@@ -470,12 +455,27 @@ help:
 	@echo "... qrc_qss.o"
 	@echo "... qrc_qss.i"
 	@echo "... qrc_qss.s"
-	@echo "... register.o"
-	@echo "... register.i"
-	@echo "... register.s"
-	@echo "... systemtrayicon.o"
-	@echo "... systemtrayicon.i"
-	@echo "... systemtrayicon.s"
+	@echo "... src/editor.o"
+	@echo "... src/editor.i"
+	@echo "... src/editor.s"
+	@echo "... src/exam.o"
+	@echo "... src/exam.i"
+	@echo "... src/exam.s"
+	@echo "... src/login.o"
+	@echo "... src/login.i"
+	@echo "... src/login.s"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
+	@echo "... src/passwdedit.o"
+	@echo "... src/passwdedit.i"
+	@echo "... src/passwdedit.s"
+	@echo "... src/register.o"
+	@echo "... src/register.i"
+	@echo "... src/register.s"
+	@echo "... src/systemtrayicon.o"
+	@echo "... src/systemtrayicon.i"
+	@echo "... src/systemtrayicon.s"
 .PHONY : help
 
 

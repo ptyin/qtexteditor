@@ -5,16 +5,16 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/QtLaTeX_autogen/mocs_compilation.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/QtLaTeX_autogen/mocs_compilation.cpp.o"
-  "/home/peter/CLionProjects/QtLaTeX/editor.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/editor.cpp.o"
-  "/home/peter/CLionProjects/QtLaTeX/exam.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/exam.cpp.o"
-  "/home/peter/CLionProjects/QtLaTeX/login.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/login.cpp.o"
-  "/home/peter/CLionProjects/QtLaTeX/main.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/main.cpp.o"
-  "/home/peter/CLionProjects/QtLaTeX/passwdedit.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/passwdedit.cpp.o"
   "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/qrc_lang.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/qrc_lang.cpp.o"
   "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/qrc_myqrc.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/qrc_myqrc.cpp.o"
   "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/qrc_qss.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/qrc_qss.cpp.o"
-  "/home/peter/CLionProjects/QtLaTeX/register.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/register.cpp.o"
-  "/home/peter/CLionProjects/QtLaTeX/systemtrayicon.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/systemtrayicon.cpp.o"
+  "/home/peter/CLionProjects/QtLaTeX/src/editor.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/src/editor.cpp.o"
+  "/home/peter/CLionProjects/QtLaTeX/src/exam.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/src/exam.cpp.o"
+  "/home/peter/CLionProjects/QtLaTeX/src/login.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/src/login.cpp.o"
+  "/home/peter/CLionProjects/QtLaTeX/src/main.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/src/main.cpp.o"
+  "/home/peter/CLionProjects/QtLaTeX/src/passwdedit.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/src/passwdedit.cpp.o"
+  "/home/peter/CLionProjects/QtLaTeX/src/register.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/src/register.cpp.o"
+  "/home/peter/CLionProjects/QtLaTeX/src/systemtrayicon.cpp" "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX.dir/src/systemtrayicon.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

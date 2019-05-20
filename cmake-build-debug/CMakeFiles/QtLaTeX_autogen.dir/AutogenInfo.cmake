@@ -11,8 +11,8 @@ set(AM_CMAKE_INCLUDE_DIRECTORIES_PROJECT_BEFORE "")
 set(AM_BUILD_DIR "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/QtLaTeX_autogen")
 set(AM_INCLUDE_DIR "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/QtLaTeX_autogen/include")
 # Files
-set(AM_SOURCES "/home/peter/CLionProjects/QtLaTeX/editor.cpp;/home/peter/CLionProjects/QtLaTeX/exam.cpp;/home/peter/CLionProjects/QtLaTeX/login.cpp;/home/peter/CLionProjects/QtLaTeX/main.cpp;/home/peter/CLionProjects/QtLaTeX/passwdedit.cpp;/home/peter/CLionProjects/QtLaTeX/register.cpp;/home/peter/CLionProjects/QtLaTeX/systemtrayicon.cpp")
-set(AM_HEADERS "/home/peter/CLionProjects/QtLaTeX/editor.h;/home/peter/CLionProjects/QtLaTeX/exam.h;/home/peter/CLionProjects/QtLaTeX/login.h;/home/peter/CLionProjects/QtLaTeX/passwdedit.h;/home/peter/CLionProjects/QtLaTeX/register.h;/home/peter/CLionProjects/QtLaTeX/systemtrayicon.h")
+set(AM_SOURCES "/home/peter/CLionProjects/QtLaTeX/src/editor.cpp;/home/peter/CLionProjects/QtLaTeX/src/exam.cpp;/home/peter/CLionProjects/QtLaTeX/src/login.cpp;/home/peter/CLionProjects/QtLaTeX/src/main.cpp;/home/peter/CLionProjects/QtLaTeX/src/passwdedit.cpp;/home/peter/CLionProjects/QtLaTeX/src/register.cpp;/home/peter/CLionProjects/QtLaTeX/src/systemtrayicon.cpp")
+set(AM_HEADERS "/home/peter/CLionProjects/QtLaTeX/src/editor.h;/home/peter/CLionProjects/QtLaTeX/src/exam.h;/home/peter/CLionProjects/QtLaTeX/src/login.h;/home/peter/CLionProjects/QtLaTeX/src/passwdedit.h;/home/peter/CLionProjects/QtLaTeX/src/register.h;/home/peter/CLionProjects/QtLaTeX/src/systemtrayicon.h")
 set(AM_SETTINGS_FILE "/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/CMakeFiles/QtLaTeX_autogen.dir/AutogenOldSettings.txt")
 # Qt
 set(AM_QT_VERSION_MAJOR 5)

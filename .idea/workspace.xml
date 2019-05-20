@@ -12,7 +12,207 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dce16066-aa6f-4b87-a775-321e54da2e47" name="Default Changelist" comment="" />
+    <list default="true" id="dce16066-aa6f-4b87-a775-321e54da2e47" name="Default Changelist" comment="change structure">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QtLaTeX.pro" beforeDir="false" afterPath="$PROJECT_DIR$/QtLaTeX.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QtLaTeX.pro.user" beforeDir="false" afterPath="$PROJECT_DIR$/QtLaTeX.pro.user" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeRuleHashes.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/CMakeRuleHashes.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/QtLaTeX_autogen/mocs_compilation.cpp.o" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/QtLaTeX_autogen/mocs_compilation.cpp.o" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/editor.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/exam.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/link.txt" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/link.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/login.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/main.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/passwdedit.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/register.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX.dir/systemtrayicon.cpp.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX_autogen.dir/AutogenInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/QtLaTeX_autogen.dir/AutogenInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/QtLaTeX" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/QtLaTeX" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/QtLaTeX.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/QtLaTeX.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/QtLaTeX_autogen/include/ui_editor.h" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/QtLaTeX_autogen/include/ui_editor.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/QtLaTeX_autogen/mocs_compilation.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/QtLaTeX_autogen/mocs_compilation.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/qrc_lang.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/qrc_lang.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/qrc_myqrc.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/qrc_myqrc.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/qrc_qss.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/qrc_qss.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cn.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cn.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/editor.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/en.qm" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/en.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/exam.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ico/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ico/login_tray.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ico/mini.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ico/setting.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ico/user0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ico/user1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ico/user2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ico/user3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ico/user4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ico/user5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/keyBoard.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/arrowBottom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/arrowLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/arrowRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/arrowTop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/bottomArrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/bottomArrowHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/checkBox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/checkBoxChecked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/checkBoxCheckedHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/checkBoxCheckedPressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/checkBoxHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/checkBoxIndeterminate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/checkBoxIndeterminateHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/checkBoxIndeterminatePressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/checkBoxPressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/closeHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/closePressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/delete.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/deleteHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/deletePressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/downButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/error.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/feedback.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/feedbackHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/feedbackPressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/information.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/maximize.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/maximizeHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/maximizePressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/minimize.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/minimizeHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/minimizePressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/nscc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/openHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/openPressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/progressBar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/progressBarChunk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/question.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/radioButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/radioButtonChecked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/radioButtonCheckedHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/radioButtonCheckedPressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/radioButtonHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/radioButtonPressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/restore.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/restoreHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/restorePressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/scan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/skin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/skinHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/skinPressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/topArrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/topArrowHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/transfer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/upButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/Black/warning.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/arrowBottom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/arrowLeft.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/arrowRight.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/arrowTop.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/bottomArrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/bottomArrowHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/checkBox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/checkBoxChecked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/checkBoxCheckedHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/checkBoxCheckedPressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/checkBoxHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/checkBoxIndeterminate.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/checkBoxIndeterminateHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/checkBoxIndeterminatePressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/checkBoxPressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/close.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/closeHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/closePressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/delete.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/deleteHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/deletePressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/downButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/error.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/feedback.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/feedbackHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/feedbackPressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/information.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/maximize.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/maximizeHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/maximizePressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/minimize.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/minimizeHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/minimizePressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/nscc.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/open.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/openHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/openPressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/progressBar.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/progressBarChunk.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/question.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/radioButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/radioButtonChecked.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/radioButtonCheckedHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/radioButtonCheckedPressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/radioButtonHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/radioButtonPressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/restore.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/restoreHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/restorePressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/scan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/skin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/skinHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/skinPressed.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/success.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/topArrow.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/topArrowHover.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/transfer.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/upButton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/White/warning.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/black.qss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/qss/white.qss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/top_img0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/top_img1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/top_img2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/top_img3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/top_img4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/top_img5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lang.qrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/myqrc.qrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/passwdedit.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/passwdedit.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/passwdedit.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/qss.qrc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/register.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/systemtrayicon.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/systemtrayicon.h" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,76 +226,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/login.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="410">
-              <caret line="388" column="13" lean-forward="true" selection-start-line="388" selection-start-column="13" selection-end-line="388" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/editor.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exam.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/exam.h">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/login.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="97">
-              <caret line="50" column="19" lean-forward="true" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#23#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="501">
+              <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -112,24 +247,28 @@
       <find>on_btn_login_clicked</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/login.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
-        <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/login.cpp" />
         <option value="$PROJECT_DIR$/editor.h" />
+        <option value="$PROJECT_DIR$/CMakeLists.txt" />
       </list>
     </option>
   </component>
   <component name="OCFindUsagesOptions" text="true" ivars="false" properties="true" derivedClasses="false" />
-  <component name="ProjectFrameBounds" extendedState="4">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="960" />
     <option name="y" value="32" />
     <option name="width" value="960" />
     <option name="height" value="1018" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -150,6 +289,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/lyx-2.3.2/lyx-2.3.2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -201,31 +341,33 @@
       <workItem from="1558125328965" duration="607000" />
       <workItem from="1558146940627" duration="63000" />
       <workItem from="1558185382991" duration="3799000" />
+      <workItem from="1558320630362" duration="910000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10088000" />
+    <option name="totallyTimeSpent" value="10998000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="960" y="32" width="960" height="1018" extended-state="4" />
+    <frame x="0" y="32" width="1920" height="1018" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.55934066" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.27914438" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32912844" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32568806" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3252595" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
-      <window_info anchor="bottom" id="Messages" order="8" weight="0.3222477" />
+      <window_info active="true" anchor="bottom" id="Messages" order="8" visible="true" weight="0.3217993" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" />
-      <window_info anchor="bottom" id="CMake" order="12" />
+      <window_info anchor="bottom" id="CMake" order="12" weight="0.3298731" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -234,6 +376,10 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="change structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="change structure" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/login.pro.user.cf63344.4.8-pre1" />
@@ -259,6 +405,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/editor.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/editor.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="44">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exam.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/login.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1100">
+          <caret line="50" column="19" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -269,51 +446,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/exam.cpp">
+    <entry file="file://$PROJECT_DIR$/login.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/exam.h">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="50" column="19" lean-forward="true" selection-start-line="50" selection-start-column="19" selection-end-line="50" selection-end-column="19" />
+        <state relative-caret-position="6614">
+          <caret line="388" column="13" selection-start-line="388" selection-start-column="13" selection-end-line="388" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="15" lean-forward="true" selection-start-line="23" selection-start-column="15" selection-end-line="23" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" column="24" lean-forward="true" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/editor.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/login.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="410">
-          <caret line="388" column="13" lean-forward="true" selection-start-line="388" selection-start-column="13" selection-end-line="388" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="501">
+          <caret line="27" column="24" lean-forward="true" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
         </state>
       </provider>
     </entry>

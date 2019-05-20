@@ -5,7 +5,7 @@
 		<Option title="QtLaTeX"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\Qt5.12.1\;CMake Files\..\..\Qt5.12.1\5.12.1\;CMake Files\..\..\Qt5.12.1\5.12.1\gcc_64\;CMake Files\..\..\Qt5.12.1\5.12.1\gcc_64\lib\;CMake Files\..\..\Qt5.12.1\5.12.1\gcc_64\lib\cmake\;CMake Files\..\..\Qt5.12.1\5.12.1\gcc_64\lib\cmake\Qt5\;CMake Files\..\..\Qt5.12.1\5.12.1\gcc_64\lib\cmake\Qt5Core\;CMake Files\..\..\Qt5.12.1\5.12.1\gcc_64\lib\cmake\Qt5Widgets\;CMake Files\..\..\Qt5.12.1\5.12.1\gcc_64\lib\cmake\Qt5Gui\;CMake Files\..\..\Qt5.12.1\5.12.1\gcc_64\lib\cmake\Qt5Sql\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\Qt5.12.1\;CMake Files\..\..\Qt5.12.1\5.12.1\;CMake Files\..\..\Qt5.12.1\5.12.1\gcc_64\;CMake Files\..\..\Qt5.12.1\5.12.1\gcc_64\lib\;CMake Files\..\..\Qt5.12.1\5.12.1\gcc_64\lib\cmake\;CMake Files\..\..\Qt5.12.1\5.12.1\gcc_64\lib\cmake\Qt5\;CMake Files\..\..\Qt5.12.1\5.12.1\gcc_64\lib\cmake\Qt5Core\;CMake Files\..\..\Qt5.12.1\5.12.1\gcc_64\lib\cmake\Qt5Widgets\;CMake Files\..\..\Qt5.12.1\5.12.1\gcc_64\lib\cmake\Qt5Gui\;CMake Files\..\..\Qt5.12.1\5.12.1\gcc_64\lib\cmake\Qt5Sql\;CMake Files\resources\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/home/peter/CLionProjects/QtLaTeX/cmake-build-debug"/>
@@ -132,79 +132,70 @@
 		<Unit filename="/home/peter/CLionProjects/QtLaTeX/cmake-build-debug/qrc_qss.cpp">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/editor.cpp">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/resources/lang.qrc">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/editor.h">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/resources/myqrc.qrc">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/editor.ui">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/resources/qss.qrc">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/exam.cpp">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/editor.cpp">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/exam.h">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/editor.h">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/exam.ui">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/editor.ui">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/lang.qrc">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/exam.cpp">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/login.cpp">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/exam.h">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/login.h">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/exam.ui">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/login.ui">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/login.cpp">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/main.cpp">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/login.h">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/myqrc.qrc">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/login.ui">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/passwdedit.cpp">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/main.cpp">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/passwdedit.h">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/passwdedit.cpp">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/passwdedit.ui">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/passwdedit.h">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/qss.qrc">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/passwdedit.ui">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/register.cpp">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/register.cpp">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/register.h">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/register.h">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/register.ui">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/register.ui">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/systemtrayicon.cpp">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/systemtrayicon.cpp">
 			<Option target="QtLaTeX"/>
 		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/systemtrayicon.h">
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/src/systemtrayicon.h">
 			<Option target="QtLaTeX"/>
 		</Unit>
 		<Unit filename="/home/peter/CLionProjects/QtLaTeX/CMakeLists.txt">
-			<Option virtualFolder="CMake Files\"/>
-		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/lang.qrc">
-			<Option virtualFolder="CMake Files\"/>
-		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/myqrc.qrc">
-			<Option virtualFolder="CMake Files\"/>
-		</Unit>
-		<Unit filename="/home/peter/CLionProjects/QtLaTeX/qss.qrc">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 		<Unit filename="/home/peter/CLionProjects/QtLaTeX/../../Qt5.12.1/5.12.1/gcc_64/lib/cmake/Qt5/Qt5Config.cmake">
@@ -371,6 +362,15 @@
 		</Unit>
 		<Unit filename="/home/peter/CLionProjects/QtLaTeX/../../Qt5.12.1/5.12.1/gcc_64/lib/cmake/Qt5Sql/Qt5Sql_QSQLiteDriverPlugin.cmake">
 			<Option virtualFolder="CMake Files\..\..\Qt5.12.1\5.12.1\gcc_64\lib\cmake\Qt5Sql\"/>
+		</Unit>
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/resources/lang.qrc">
+			<Option virtualFolder="CMake Files\resources\"/>
+		</Unit>
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/resources/myqrc.qrc">
+			<Option virtualFolder="CMake Files\resources\"/>
+		</Unit>
+		<Unit filename="/home/peter/CLionProjects/QtLaTeX/resources/qss.qrc">
+			<Option virtualFolder="CMake Files\resources\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>

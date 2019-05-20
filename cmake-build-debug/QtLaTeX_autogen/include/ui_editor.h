@@ -10,8 +10,10 @@
 #define UI_EDITOR_H
 
 #include <QtCore/QVariant>
+#include <QtWidgets/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QMainWindow>
+#include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
@@ -21,8 +23,9 @@ QT_BEGIN_NAMESPACE
 class Ui_Editor
 {
 public:
-    QMenuBar *menubar;
     QWidget *centralwidget;
+    QMenuBar *menubar;
+    QMenu *menuFile;
     QStatusBar *statusbar;
 
     void setupUi(QMainWindow *Editor)
@@ -30,15 +33,20 @@ public:
         if (Editor->objectName().isEmpty())
             Editor->setObjectName(QString::fromUtf8("Editor"));
         Editor->resize(800, 600);
-        menubar = new QMenuBar(Editor);
-        menubar->setObjectName(QString::fromUtf8("menubar"));
-        Editor->setMenuBar(menubar);
         centralwidget = new QWidget(Editor);
         centralwidget->setObjectName(QString::fromUtf8("centralwidget"));
         Editor->setCentralWidget(centralwidget);
+        menubar = new QMenuBar(Editor);
+        menubar->setObjectName(QString::fromUtf8("menubar"));
+        menubar->setGeometry(QRect(0, 0, 800, 25));
+        menuFile = new QMenu(menubar);
+        menuFile->setObjectName(QString::fromUtf8("menuFile"));
+        Editor->setMenuBar(menubar);
         statusbar = new QStatusBar(Editor);
         statusbar->setObjectName(QString::fromUtf8("statusbar"));
         Editor->setStatusBar(statusbar);
+
+        menubar->addAction(menuFile->menuAction());
 
         retranslateUi(Editor);
 
@@ -48,6 +56,7 @@ public:
     void retranslateUi(QMainWindow *Editor)
     {
         Editor->setWindowTitle(QApplication::translate("Editor", "Editor", nullptr));
+        menuFile->setTitle(QApplication::translate("Editor", "File", nullptr));
     } // retranslateUi
 
 };

@@ -13,31 +13,31 @@ TEMPLATE = app
 RC_FILE = myapp.rc
 
 
-SOURCES += main.cpp\
-        login.cpp \
-    exam.cpp \
-    passwdedit.cpp \
-    register.cpp \
-    systemtrayicon.cpp \
-    editor.cpp
+SOURCES += src/main.cpp\
+        src/login.cpp \
+    src/exam.cpp \
+    src/passwdedit.cpp \
+    src/register.cpp \
+    src/systemtrayicon.cpp \
+    src/editor.cpp
 
-HEADERS  += login.h \
-    exam.h \
-    passwdedit.h \
-    register.h \
-    systemtrayicon.h \
-    editor.h
+HEADERS  += src/login.h \
+    src/exam.h \
+    src/passwdedit.h \
+    src/register.h \
+    src/systemtrayicon.h \
+    src/editor.h
 
-FORMS    += login.ui \
-    exam.ui \
-    passwdedit.ui \
-    register.ui \
-    editor.ui
+FORMS    += src/login.ui \
+    src/exam.ui \
+    src/passwdedit.ui \
+    src/register.ui \
+    src/editor.ui
 
 RESOURCES += \
-    myqrc.qrc \
-    lang.qrc \
-    qss.qrc
+    resources/myqrc.qrc \
+    resources/lang.qrc \
+    resources/qss.qrc
 
 TRANSLATIONS+=cn.ts\
               en.ts
