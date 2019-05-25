@@ -20,7 +20,8 @@ SOURCES += src/main.cpp\
     src/register.cpp \
     src/systemtrayicon.cpp \
     src/editor.cpp \
-    src/mtextedit.cpp
+    src/mtextedit.cpp \
+    src/HTMLParser.cpp
 
 HEADERS  += src/login.h \
     src/exam.h \
@@ -28,7 +29,8 @@ HEADERS  += src/login.h \
     src/register.h \
     src/systemtrayicon.h \
     src/editor.h \
-    src/mtextedit.h
+    src/mtextedit.h \
+    src/HTMLParser.h
 
 FORMS    += src/login.ui \
     src/exam.ui \

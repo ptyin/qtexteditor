@@ -5,6 +5,8 @@
 #include <QByteArray>
 #include <QBuffer>
 #include <stdlib.h>
+#include <QKeyEvent>
+#include <QDebug>
 
 
 MTextEdit::MTextEdit(QWidget *parent) : QTextEdit(parent)
@@ -126,5 +128,19 @@ void MTextEdit::dropImage(const QImage &image, const QString &format)
                                 .arg(base64l.data())
     );
     cursor.insertImage(imageFormat);
+}
+
+void MTextEdit::dropImage(const QString &name)
+{
+    QTextCursor cursor = textCursor();
+    cursor.insertImage(name);
+}
+
+void MTextEdit::keyPressEvent(QKeyEvent *e)
+{
+//    if(e->key()==Qt::Key_Tab)
+//        emit tab();
+//    else
+    QTextEdit::keyPressEvent(e);
 }
 

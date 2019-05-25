@@ -21,8 +21,10 @@ Editor::Editor(QWidget *parent) :
 //    connect(ui->actionopen_folder, SIGNAL(triggered()), this, SLOT(on_actionopen_folder_triggered()));
 //    connect(ui->actionsave, SIGNAL(triggered()), this, SLOT(on_actionsave_triggered()));
 //    connect(ui->actionexport, SIGNAL(triggered()), this, SLOT(on_actionexport_triggered()));
+    ui->actionsave->setShortcut(QKeySequence("CTRL+S"));
+
     showLocalFileSystem();
-    m_lastBlockList = 0;
+    m_lastBlockList = nullptr;
     ui->textEdit->setTabStopWidth(40);
 
     connect(ui->textEdit, SIGNAL(currentCharFormatChanged(QTextCharFormat)),
@@ -41,10 +43,10 @@ Editor::Editor(QWidget *parent) :
     // paragraph formatting
 
     m_paragraphItems << tr("Standard")
-                     << tr("Heading 1")
-                     << tr("Heading 2")
-                     << tr("Heading 3")
-                     << tr("Heading 4")
+                     << tr("SansSerif")
+                     << tr("System")
+                     << tr("Helvetica")
+                     << tr("Courier")
                      << tr("Monospace");
     ui->f_paragraph->addItems(m_paragraphItems);
 
@@ -80,6 +82,10 @@ Editor::Editor(QWidget *parent) :
     connect(ui->f_copy, SIGNAL(clicked()), ui->textEdit, SLOT(copy()));
     connect(ui->f_paste, SIGNAL(clicked()), ui->textEdit, SLOT(paste()));
 
+    connect(ui->f_justify_center, SIGNAL(clicked()), this, SLOT(justifyCenter()));
+    connect(ui->f_justify_left, SIGNAL(clicked()), this, SLOT(justifyLeft()));
+    connect(ui->f_justify_right, SIGNAL(clicked()), this, SLOT(justifyRight()));
+
     connect(ui->textEdit, SIGNAL(copyAvailable(bool)), ui->f_cut, SLOT(setEnabled(bool)));
     connect(ui->textEdit, SIGNAL(copyAvailable(bool)), ui->f_copy, SLOT(setEnabled(bool)));
 
@@ -92,6 +98,8 @@ Editor::Editor(QWidget *parent) :
     ui->f_link->setShortcut(Qt::CTRL + Qt::Key_L);
 
     connect(ui->f_link, SIGNAL(clicked(bool)), this, SLOT(textLink(bool)));
+    connect(ui->f_split_page, SIGNAL(clicked()), this, SLOT(splitPage()));
+    connect(ui->f_split_paragraph, SIGNAL(clicked()), this, SLOT(splitPragraph()));
 
     // bold, italic & underline
 
@@ -135,8 +143,9 @@ Editor::Editor(QWidget *parent) :
 
     // indentation
 
-    ui->f_indent_dec->setShortcut(Qt::CTRL + Qt::Key_Comma);
-    ui->f_indent_inc->setShortcut(Qt::CTRL + Qt::Key_Period);
+    ui->f_indent_dec->setShortcut(QKeySequence("Shift+Tab"));
+    ui->f_indent_inc->setShortcut(QKeySequence("Ctrl+Tab"));
+    connect(ui->textEdit, SIGNAL(tab()), this, SLOT(increaseIndentation()));
 
     connect(ui->f_indent_inc, SIGNAL(clicked()), this, SLOT(increaseIndentation()));
     connect(ui->f_indent_dec, SIGNAL(clicked()), this, SLOT(decreaseIndentation()));
@@ -337,34 +346,38 @@ void Editor::textStyle(int index)
     cursor.setCharFormat(fmt);
     ui->textEdit->setCurrentCharFormat(fmt);
 
-    if (index == ParagraphHeading1
-        || index == ParagraphHeading2
-        || index == ParagraphHeading3
-        || index == ParagraphHeading4)
+    if (index == ParagraphSansSerif)
     {
-        if (index == ParagraphHeading1)
-        {
-            fmt.setFontPointSize(m_fontsize_h1);
-        }
-        if (index == ParagraphHeading2)
-        {
-            fmt.setFontPointSize(m_fontsize_h2);
-        }
-        if (index == ParagraphHeading3)
-        {
-            fmt.setFontPointSize(m_fontsize_h3);
-        }
-        if (index == ParagraphHeading4)
-        {
-            fmt.setFontPointSize(m_fontsize_h4);
-        }
-        if (index == ParagraphHeading2 || index == ParagraphHeading4)
-        {
-            fmt.setFontItalic(true);
-        }
-
-        fmt.setFontWeight(QFont::Bold);
+        fmt = cursor.charFormat();
+        fmt.setFontFamily("SansSerif");
+        fmt.setFontStyleHint(QFont::SansSerif);
+        fmt.setFontFixedPitch(true);
     }
+    if (index == ParagraphSystem)
+    {
+        fmt = cursor.charFormat();
+        fmt.setFontFamily("System");
+        fmt.setFontStyleHint(QFont::System);
+        fmt.setFontFixedPitch(true);
+    }
+    if (index == ParagraphHelvetica)
+    {
+        fmt = cursor.charFormat();
+        fmt.setFontFamily("Helvetica");
+        fmt.setFontStyleHint(QFont::Helvetica);
+        fmt.setFontFixedPitch(true);
+    }
+    if (index == ParagraphCourier)
+    {
+        fmt = cursor.charFormat();
+        fmt.setFontFamily("Courier");
+        fmt.setFontStyleHint(QFont::Courier);
+        fmt.setFontFixedPitch(true);
+    }
+//    if (index == ParagraphSystem || index == ParagraphCourier)
+//    {
+//        fmt.setFontItalic(true);
+//    }
     if (index == ParagraphMonospace)
     {
         fmt = cursor.charFormat();
@@ -418,6 +431,19 @@ void Editor::textBgColor()
     cursor.setCharFormat(fmt);
     ui->textEdit->setCurrentCharFormat(fmt);
     bgColorChanged(col);
+}
+
+void Editor::justifyCenter()
+{
+    ui->textEdit->setAlignment(Qt::AlignCenter);
+}
+void Editor::justifyLeft()
+{
+    ui->textEdit->setAlignment(Qt::AlignLeft);
+}
+void Editor::justifyRight()
+{
+    ui->textEdit->setAlignment(Qt::AlignRight);
 }
 
 void Editor::listBullet(bool checked)
@@ -489,14 +515,10 @@ void Editor::slotCursorPositionChanged()
         {
             ui->f_list_bullet->setChecked(true);
             ui->f_list_ordered->setChecked(false);
-        } else if (lfmt.style() == QTextListFormat::ListDecimal)
-        {
-            ui->f_list_bullet->setChecked(false);
-            ui->f_list_ordered->setChecked(true);
         } else
         {
             ui->f_list_bullet->setChecked(false);
-            ui->f_list_ordered->setChecked(false);
+            ui->f_list_ordered->setChecked(lfmt.style() == QTextListFormat::ListDecimal);
         }
     } else
     {
@@ -512,28 +534,40 @@ void Editor::fontChanged(const QFont &f)
     ui->f_italic->setChecked(f.italic());
     ui->f_underline->setChecked(f.underline());
     ui->f_strikeout->setChecked(f.strikeOut());
-    if (f.pointSize() == m_fontsize_h1)
-    {
-        ui->f_paragraph->setCurrentIndex(ParagraphHeading1);
-    } else if (f.pointSize() == m_fontsize_h2)
-    {
-        ui->f_paragraph->setCurrentIndex(ParagraphHeading2);
-    } else if (f.pointSize() == m_fontsize_h3)
-    {
-        ui->f_paragraph->setCurrentIndex(ParagraphHeading3);
-    } else if (f.pointSize() == m_fontsize_h4)
-    {
-        ui->f_paragraph->setCurrentIndex(ParagraphHeading4);
-    } else
-    {
-        if (f.fixedPitch() && f.family() == "Monospace")
+//    if (f.pointSize() == m_fontsize_h1)
+//    {
+//        ui->f_paragraph->setCurrentIndex(ParagraphSansSerif);
+//    } else if (f.pointSize() == m_fontsize_h2)
+//    {
+//        ui->f_paragraph->setCurrentIndex(ParagraphSystem);
+//    } else if (f.pointSize() == m_fontsize_h3)
+//    {
+//        ui->f_paragraph->setCurrentIndex(ParagraphHelvetica);
+//    } else if (f.pointSize() == m_fontsize_h4)
+//    {
+//        ui->f_paragraph->setCurrentIndex(ParagraphCourier);
+//    } else
+//    {
+        if (f.fixedPitch() && f.family() == "SansSerif")
+        {
+            ui->f_paragraph->setCurrentIndex(ParagraphSansSerif);
+        }else if (f.fixedPitch() && f.family() == "System")
+        {
+            ui->f_paragraph->setCurrentIndex(ParagraphSystem);
+        } else if (f.fixedPitch() && f.family() == "Helvetica")
+        {
+            ui->f_paragraph->setCurrentIndex(ParagraphHelvetica);
+        } else if (f.fixedPitch() && f.family() == "Courier")
+        {
+            ui->f_paragraph->setCurrentIndex(ParagraphCourier);
+        } else if (f.fixedPitch() && f.family() == "Monospace")
         {
             ui->f_paragraph->setCurrentIndex(ParagraphMonospace);
         } else
         {
             ui->f_paragraph->setCurrentIndex(ParagraphStandard);
         }
-    }
+//    }
     if (ui->textEdit->textCursor().currentList())
     {
         QTextListFormat lfmt = ui->textEdit->textCursor().currentList()->format();
@@ -541,14 +575,10 @@ void Editor::fontChanged(const QFont &f)
         {
             ui->f_list_bullet->setChecked(true);
             ui->f_list_ordered->setChecked(false);
-        } else if (lfmt.style() == QTextListFormat::ListDecimal)
-        {
-            ui->f_list_bullet->setChecked(false);
-            ui->f_list_ordered->setChecked(true);
         } else
         {
             ui->f_list_bullet->setChecked(false);
-            ui->f_list_ordered->setChecked(false);
+            ui->f_list_ordered->setChecked(lfmt.style() == QTextListFormat::ListDecimal);
         }
     } else
     {
@@ -603,11 +633,11 @@ QString Editor::toHtml() const
 {
     QString s = ui->textEdit->toHtml();
     // convert emails to links
-    s = s.replace(QRegExp("(<[^a][^>]+>(?:<span[^>]+>)?|\\s)([a-zA-Z\\d]+@[a-zA-Z\\d]+\\.[a-zA-Z]+)"),
-                  "\\1<a href=\"mailto:\\2\">\\2</a>");
+    s = s.replace(QRegExp(R"((<[^a][^>]+>(?:<span[^>]+>)?|\s)([a-zA-Z\d]+@[a-zA-Z\d]+\.[a-zA-Z]+))"),
+                  R"(\1<a href="mailto:\2">\2</a>)");
     // convert links
-    s = s.replace(QRegExp("(<[^a][^>]+>(?:<span[^>]+>)?|\\s)((?:https?|ftp|file)://[^\\s'\"<>]+)"),
-                  "\\1<a href=\"\\2\">\\2</a>");
+    s = s.replace(QRegExp(R"((<[^a][^>]+>(?:<span[^>]+>)?|\s)((?:https?|ftp|file)://[^\s'"<>]+))"),
+                  R"(\1<a href="\2">\2</a>)");
     // see also: Utils::linkify()
     return s;
 }
@@ -659,10 +689,13 @@ void Editor::insertImage()
     QString file = QFileDialog::getOpenFileName(this,
                                                 tr("Select an image"),
                                                 attdir,
-                                                tr("JPEG (*.jpg);; GIF (*.gif);; PNG (*.png);; BMP (*.bmp);; All (*)"));
-    QImage image = QImageReader(file).read();
-
-    ui->textEdit->dropImage(image, QFileInfo(file).suffix().toUpper().toLocal8Bit().data());
+                                                tr("image (*.jpg *.gif *.png *.bmp);; JPEG (*.jpg);; GIF (*.gif);; PNG (*.png);; BMP (*.bmp);; All (*)"));
+    if(file!="")
+    {
+//        QImage image = QImageReader(file).read();
+//        ui->textEdit->dropImage(image, QFileInfo(file).suffix().toUpper().toLocal8Bit().data());
+        ui->textEdit->dropImage(file);
+    }
 
 }
 

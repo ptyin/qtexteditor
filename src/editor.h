@@ -96,6 +96,20 @@ protected slots:
 
     void textSource();
 
+    void justifyCenter();
+
+    void justifyLeft();
+
+    void justifyRight();
+
+    void splitPage()
+    {
+//        ui->textEdit->textCursor().insertHtml("<span style='color:green'><hr></span>");
+        ui->textEdit->textCursor().insertHtml("<hr /><hr /><br />");
+    }
+
+    void splitPragraph(){ui->textEdit->insertHtml("<hr /><br />");}
+
 protected:
     void mergeFormatOnWordOrSelection(const QTextCharFormat &format);
 
@@ -120,10 +134,10 @@ protected:
     enum ParagraphItems
     {
         ParagraphStandard = 0,
-        ParagraphHeading1,
-        ParagraphHeading2,
-        ParagraphHeading3,
-        ParagraphHeading4,
+        ParagraphSansSerif,
+        ParagraphSystem,
+        ParagraphHelvetica,
+        ParagraphCourier,
         ParagraphMonospace
     };
 

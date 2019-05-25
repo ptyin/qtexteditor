@@ -21,5 +21,7 @@
         <file>images/ico/strike-out.png</file>
         <file>images/ico/bullet-list.png</file>
         <file>images/ico/order-list.png</file>
+        <file>images/ico/split-page.png</file>
+        <file>images/ico/split-paragraph.png</file>
     </qresource>
 </RCC>

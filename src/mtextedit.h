@@ -13,6 +13,11 @@ public:
 
     void dropImage(const QImage &image, const QString &format);
 
+    void dropImage(const QString &name);
+
+signals:
+    void tab();
+
 protected:
     bool canInsertFromMimeData(const QMimeData *source) const;
 
@@ -20,6 +25,7 @@ protected:
 
     QMimeData *createMimeDataFromSelection() const;
 
+    void keyPressEvent(QKeyEvent *e) override;
 };
 
 #endif

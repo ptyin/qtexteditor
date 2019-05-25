@@ -36,9 +36,12 @@ set(SOURCELIST
         src/systemtrayicon.h
         src/mtextedit.cpp
         src/mtextedit.h
-        )
+        src/HTMLParser.cpp
+        src/HTMLParser.h)
 qt5_add_resources(SOURCELIST resources/lang.qrc resources/myqrc.qrc resources/qss.qrc)
 # Tell CMake to create the QTLaTeX executable
 add_executable(QtLaTeX ${SOURCELIST})
+add_executable(test test/main.cpp test/HTMLParser.cpp test/HTMLParser.h)
 # Use the Widgets module from Qt 5
 target_link_libraries(QtLaTeX Qt5::Widgets Qt5::Core Qt5::Gui Qt5::Sql)
+target_link_libraries(test Qt5::Widgets Qt5::Core Qt5::Gui Qt5::Sql)
