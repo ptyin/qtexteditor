@@ -34,6 +34,8 @@ set(SOURCELIST
         src/editor.h
         src/systemtrayicon.cpp
         src/systemtrayicon.h
+        src/mtextedit.cpp
+        src/mtextedit.h
         )
 qt5_add_resources(SOURCELIST resources/lang.qrc resources/myqrc.qrc resources/qss.qrc)
 # Tell CMake to create the QTLaTeX executable

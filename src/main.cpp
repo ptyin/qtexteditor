@@ -12,9 +12,10 @@ int main(int argc, char *argv[])
 
 //    Login::setStyle("black.qss");
 
-    Login w;
+    Login w(nullptr);
 //    w.setStyle("white.qss");
 //    w.setGeometry()
+    w.move((QApplication::desktop()->width() - w.width()) / 2, (QApplication::desktop()->height() - w.height()) / 2);
     w.show();
 
     //加载qss start

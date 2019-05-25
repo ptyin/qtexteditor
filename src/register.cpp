@@ -3,8 +3,8 @@
 #include <QDebug>
 
 Register::Register(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::Register)
+        QDialog(parent),
+        ui(new Ui::Register)
 {
     ui->setupUi(this);
 
@@ -21,7 +21,8 @@ Register::~Register()
 
 void Register::setParent(Login *dialog)
 {
-    if(dialog != NULL){
+    if (dialog != NULL)
+    {
         pWidget = dialog;
     }
 }
@@ -49,6 +50,14 @@ void Register::on_registerCheckButton_clicked()
     pWidget->user_info_stu.email = ui->lineEditEmail->text();
     qDebug() << "333:" << pWidget->user_info_stu.userName << pWidget->user_info_stu.passwd
              << pWidget->user_info_stu.email;
+//    QSqlDatabase db = pWidget->getDb();
+//    if(!db.isOpen())
+//        db.open();
+//    QSqlQuery query(db);
+//    query.prepare("insert into userInfo values (user ,passwd, email, false)");
+//    query.bindValue(":user", ui->lineEditName->text());
+//    query.bindValue(":passwd", ui->lineEditPassword->text());
+//    query.bindValue(":email", ui->lineEditEmail->text());
     this->close();
 
 }

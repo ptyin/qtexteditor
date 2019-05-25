@@ -19,14 +19,16 @@ SOURCES += src/main.cpp\
     src/passwdedit.cpp \
     src/register.cpp \
     src/systemtrayicon.cpp \
-    src/editor.cpp
+    src/editor.cpp \
+    src/mtextedit.cpp
 
 HEADERS  += src/login.h \
     src/exam.h \
     src/passwdedit.h \
     src/register.h \
     src/systemtrayicon.h \
-    src/editor.h
+    src/editor.h \
+    src/mtextedit.h
 
 FORMS    += src/login.ui \
     src/exam.ui \

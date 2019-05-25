@@ -6,14 +6,14 @@
 //SystemTrayIcon::SystemTrayIcon(QWidget *parent) : QWidget(parent)
 SystemTrayIcon::SystemTrayIcon(QStringList strList, QIcon icon, QWidget *parent) : QWidget(parent)
 {
-     pWidget = parent;
-     m_strList = strList;
-     m_icon = icon;
+    pWidget = parent;
+    m_strList = strList;
+    m_icon = icon;
 
-     create_sysTrayMenuAct();//1.创建点击托盘菜单项的act行为
-     create_sysTrayMenu();//2.创建托盘菜单
-     create_sysTrayIcon();//3.创建托盘,init
-     //注意初始化顺序：1.init托盘菜单包含的项 2.init托盘菜单 3.init托盘Button
+    create_sysTrayMenuAct();//1.创建点击托盘菜单项的act行为
+    create_sysTrayMenu();//2.创建托盘菜单
+    create_sysTrayIcon();//3.创建托盘,init
+    //注意初始化顺序：1.init托盘菜单包含的项 2.init托盘菜单 3.init托盘Button
 }
 
 //创建点击托盘菜单项的act行为
@@ -23,23 +23,23 @@ void SystemTrayIcon::create_sysTrayMenuAct()
 //    actFixed->setCheckable(true);
 //    actFixed->setChecked(true);
 
-    act_sys_tray_min = new QAction(tr("最小化(&M)"),this);
-    connect(act_sys_tray_min,SIGNAL(triggered()),pWidget,SLOT( hide() ));
+    act_sys_tray_min = new QAction(tr("最小化(&M)"), this);
+    connect(act_sys_tray_min, SIGNAL(triggered()), pWidget, SLOT(hide()));
 
-    act_sys_tray_normal = new QAction(tr("还 原(&R)"),this);
-    connect(act_sys_tray_normal,SIGNAL(triggered()),pWidget,SLOT( showNormal()) );
+    act_sys_tray_normal = new QAction(tr("还 原(&R)"), this);
+    connect(act_sys_tray_normal, SIGNAL(triggered()), pWidget, SLOT(showNormal()));
 
-    act_sys_tray_exit = new QAction(tr("退出(&Q)"),this);
-    connect(act_sys_tray_exit,SIGNAL(triggered()),qApp,SLOT( quit()));
+    act_sys_tray_exit = new QAction(tr("退出(&Q)"), this);
+    connect(act_sys_tray_exit, SIGNAL(triggered()), qApp, SLOT(quit()));
 
-    act_sys_tray_lang_ch = new QAction(tr("简体中文(&C)"),this);
+    act_sys_tray_lang_ch = new QAction(tr("简体中文(&C)"), this);
 //    connect(act_sys_tray_lang_ch,SIGNAL(triggered()),this,SLOT(set_lang()));
 
-    act_sys_tray_lang_en = new QAction(tr("英语(&E)"),this);
+    act_sys_tray_lang_en = new QAction(tr("英语(&E)"), this);
     acrLangGrp = new QActionGroup(this);
     acrLangGrp->addAction(act_sys_tray_lang_ch);
     acrLangGrp->addAction(act_sys_tray_lang_en);
-    connect(acrLangGrp,SIGNAL(triggered(QAction*)),this,SLOT( set_lang(QAction*)));
+    connect(acrLangGrp, SIGNAL(triggered(QAction * )), this, SLOT(set_lang(QAction * )));
 
 
 }
@@ -85,9 +85,9 @@ void SystemTrayIcon::create_sysTrayMenu()
 void SystemTrayIcon::create_sysTrayIcon()
 {
     if (!QSystemTrayIcon::isSystemTrayAvailable())      //判断系统是否支持系统托盘图标
-     {
-         return;
-     }
+    {
+        return;
+    }
 
     mSysTrayIcon = new QSystemTrayIcon(pWidget);
     mSysTrayIcon->setIcon(m_icon);   //设置图标图片
@@ -105,7 +105,7 @@ void SystemTrayIcon::create_sysTrayIcon()
 
     //给QSystemTrayIcon对象mSysTrayIcon添加信号为activated(QSystemTrayIcon::ActivationReason)的槽函数
     connect(mSysTrayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
-                  this, SLOT(slot_sys_tray_iconActivated(QSystemTrayIcon::ActivationReason)));
+            this, SLOT(slot_sys_tray_iconActivated(QSystemTrayIcon::ActivationReason)));
 
 }
 
@@ -149,18 +149,18 @@ void SystemTrayIcon::slot_sys_tray_iconActivated(QSystemTrayIcon::ActivationReas
 void SystemTrayIcon::set_lang(QAction *act)
 {
     qDebug() << act->text();
-    if(act == act_sys_tray_lang_ch)
+    if (act == act_sys_tray_lang_ch)
     {
         qDebug() << "china ";
         translator.load(":/cn.qm");
         qApp->installTranslator(&translator);
 
     }
-    if(act == act_sys_tray_lang_en)
+    if (act == act_sys_tray_lang_en)
     {
         qDebug() << "english ";
         translator.load(":/en.qm");
-        qApp->installTranslator( &translator );
+        qApp->installTranslator(&translator);
     }
     this->refresh();//刷新托盘相关文字
     emit signal_lang_refresh();//发送刷新页面文字的信号

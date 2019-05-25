@@ -18,5 +18,8 @@
         <file>images/ico/user0.png</file>
         <file>images/top_img0.png</file>
         <file>images/ico/login_tray.png</file>
+        <file>images/ico/strike-out.png</file>
+        <file>images/ico/bullet-list.png</file>
+        <file>images/ico/order-list.png</file>
     </qresource>
 </RCC>

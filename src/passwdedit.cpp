@@ -5,8 +5,8 @@
 #include <QDebug>
 
 passwdEdit::passwdEdit(QWidget *parent) :
-    QDialog(parent),
-    ui(new Ui::passwdEdit)
+        QDialog(parent),
+        ui(new Ui::passwdEdit)
 {
     ui->setupUi(this);
 
@@ -22,13 +22,13 @@ void passwdEdit::init()
 {
     setWindowTitle(tr("修改密码"));
 
-    connect(this,SIGNAL(passwdEditOk()),this,SLOT(close()));
-    connect(ui->btn_cancel,SIGNAL(clicked()),this,SLOT(close()));
+    connect(this, SIGNAL(passwdEditOk()), this, SLOT(close()));
+    connect(ui->btn_cancel, SIGNAL(clicked()), this, SLOT(close()));
 }
 
 void passwdEdit::setLogin(Login *m)
 {
-    if(m != NULL)
+    if (m != NULL)
     {
         login = m;
     }
@@ -36,46 +36,42 @@ void passwdEdit::setLogin(Login *m)
 
 void passwdEdit::on_btn_ok_clicked()
 {
-  //  login->show();
+    //  login->show();
 
     QString oldPasswd = ui->lineEdit_passwd->text();
     QString newPasswd = ui->lineEdit_newPasswd->text();
     QString passwdOk = ui->lineEdit_passwdOk->text();
 
-    if(oldPasswd.isEmpty() || newPasswd.isEmpty() || passwdOk.isEmpty())
+    if (oldPasswd.isEmpty() || newPasswd.isEmpty() || passwdOk.isEmpty())
     {
-        QMessageBox::warning(this,tr("警告"),tr("密码为空！"));
-    }
-    else
+        QMessageBox::warning(this, tr("警告"), tr("密码为空！"));
+    } else
     {
-        if(oldPasswd == login->user_info_stu.passwd)
+        if (oldPasswd == login->user_info_stu.passwd)
         {
-            if(oldPasswd == newPasswd)
+            if (oldPasswd == newPasswd)
             {
-                QMessageBox::warning(this,tr("警告"),tr("新密码与旧密码一样！"));
+                QMessageBox::warning(this, tr("警告"), tr("新密码与旧密码一样！"));
                 return;
-            }
-            else
+            } else
             {
-                if(newPasswd != passwdOk)
+                if (newPasswd != passwdOk)
                 {
-                    QMessageBox::information(this,tr("提示"),tr("密码修改失败！"));
-                }
-                else
+                    QMessageBox::information(this, tr("提示"), tr("密码修改失败！"));
+                } else
                 {
                     QSqlQuery query;
-                    query.exec(QString ("update userInfo set passwd = '%1' where name = '%2'")
-                               .arg(newPasswd).arg(login->user_info_stu.userName));
+                    query.exec(QString("update userInfo set passwd = '%1' where name = '%2'")
+                                       .arg(newPasswd).arg(login->user_info_stu.userName));
 
-                    QMessageBox::information(this,tr("提示"),tr("密码修改成功！"));
+                    QMessageBox::information(this, tr("提示"), tr("密码修改成功！"));
 
                     emit passwdEditOk();
                 }
             }
-        }
-        else
+        } else
         {
-            QMessageBox::warning(this,tr("警告"),tr("旧密码输入错误！"));
+            QMessageBox::warning(this, tr("警告"), tr("旧密码输入错误！"));
         }
     }
 }

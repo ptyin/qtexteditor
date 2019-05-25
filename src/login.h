@@ -12,22 +12,28 @@
 #include <QActionGroup>
 
 
-namespace Ui {
-class Login;
+namespace Ui
+{
+    class Login;
 }
 
 class Login : public QWidget
 {
-    Q_OBJECT
-    
+Q_OBJECT
+
 public:
-    explicit Login(QWidget *parent = 0);
+    explicit Login(QWidget *parent);
+
     ~Login();
 
     void init();
+
     void get_user_info();
+
     void configWindow();
+
     void init_sql();
+
     void set_top_img(bool isSandom, int index_img);//isSandom is true,set img show by sandom
     void set_button();//设置UI上的按钮
     void set_user_img(bool isSandom, int index_img);//设置UI上用户头像
@@ -35,7 +41,6 @@ public:
     void create_menuLanguage();         //设置语言菜单
 
     void setStyle(const QString &style);//设置style
-
 
 protected:
     void mousePressEvent(QMouseEvent *e);
@@ -45,9 +50,11 @@ protected:
     void mouseReleaseEvent(QMouseEvent *e);
 
 signals:
+
     void close();
-    
+
 private slots:
+
     void on_btn_login_clicked();
 
     void on_btn_regist_clicked();
@@ -58,7 +65,7 @@ private slots:
 
     void slot_setLanguage();        //设置语言
 
-    void slot_actGrp(QAction* act);
+    void slot_actGrp(QAction *act);
 
     void slot_timer1();
 
@@ -75,7 +82,8 @@ private slots:
 private:
     Ui::Login *ui;
 
-    struct UserInfoStu{
+    struct UserInfoStu
+    {
         QString userName;
         QString passwd;
         QString email;
@@ -100,6 +108,7 @@ private:
     QAction *act2;                  //离线
     QAction *act3;                  //忙碌
     QActionGroup *actGrp;
+    QList<bool> is_remembered;
 
 public:
     UserInfoStu user_info_stu;
