@@ -743,7 +743,7 @@ void Editor::on_actionexport_triggered()
         tmp.close();
     }
     QProcess process(this);
-    qDebug() << process.execute("plugins/jre/bin/java -jar plugins/htmltolatex.jar -output "+file);
+    qDebug() << process.execute("java -jar plugins/htmltolatex.jar -output "+file);
 }
 
 Editor::~Editor()

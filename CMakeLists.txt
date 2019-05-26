@@ -41,7 +41,7 @@ set(SOURCELIST
 qt5_add_resources(SOURCELIST resources/lang.qrc resources/myqrc.qrc resources/qss.qrc)
 message("${PROJECT_BINARY_DIR}")
 file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/plugins)
-file(COPY plugins/htmltolatex.jar plugins/jre plugins DESTINATION ${PROJECT_BINARY_DIR}/plugins/)
+file(COPY plugins/htmltolatex.jar DESTINATION ${PROJECT_BINARY_DIR}/plugins/)
 file(COPY plugins/config.xml DESTINATION ${PROJECT_BINARY_DIR}/)
 # Tell CMake to create the QTLaTeX executable
 add_executable(QtLaTeX ${SOURCELIST})

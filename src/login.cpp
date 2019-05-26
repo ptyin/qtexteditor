@@ -166,7 +166,7 @@ void Login::init_sql()
             qDebug() << "userName:::" << userName << "passwd:::" << passwd;
         }
 
-        if (is_remembered.first())
+        if (!is_remembered.empty()&&is_remembered.at(0))
         {
             ui->checkBox_rPasswd->setChecked(true);
             ui->lineEdit_passwd->setText(userPasswd.at(0));
