@@ -39,9 +39,14 @@ set(SOURCELIST
         src/HTMLParser.cpp
         src/HTMLParser.h)
 qt5_add_resources(SOURCELIST resources/lang.qrc resources/myqrc.qrc resources/qss.qrc)
+message("${PROJECT_BINARY_DIR}")
+file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/plugins)
+file(COPY plugins/htmltolatex.jar plugins/jre plugins DESTINATION ${PROJECT_BINARY_DIR}/plugins/)
+file(COPY plugins/config.xml DESTINATION ${PROJECT_BINARY_DIR}/)
 # Tell CMake to create the QTLaTeX executable
 add_executable(QtLaTeX ${SOURCELIST})
 add_executable(test test/main.cpp test/HTMLParser.cpp test/HTMLParser.h)
+#file(MAKE_DIRECTORY )
 # Use the Widgets module from Qt 5
 target_link_libraries(QtLaTeX Qt5::Widgets Qt5::Core Qt5::Gui Qt5::Sql)
 target_link_libraries(test Qt5::Widgets Qt5::Core Qt5::Gui Qt5::Sql)

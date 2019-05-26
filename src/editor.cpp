@@ -9,6 +9,7 @@
 #include <QMimeData>
 #include <QtCore/QSettings>
 #include <QImageReader>
+#include <QtCore/QProcess>
 #include "editor.h"
 #include "ui_editor.h"
 
@@ -704,7 +705,7 @@ void Editor::on_actionopen_triggered()
 {
     QFileDialog fileDialog(this);
 //    qDebug() << fileDialog->getOpenFileName(this, "打开文件", "", "图片文件(*html);;");
-    QFile file(fileDialog.getOpenFileName(this, "打开文件", "", "html文件(*html);;"));
+    QFile file(fileDialog.getOpenFileName(this, "打开文件", "", "html文件(*.html);;"));
     if (file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
         ui->textEdit->setHtml(file.readAll());
@@ -721,7 +722,7 @@ void Editor::on_actionopen_folder_triggered()
 void Editor::on_actionsave_triggered()
 {
     QFileDialog fileDialog(this);
-    QFile file(fileDialog.getSaveFileName(this, "保存文件", "", "html文件(*html);;"));
+    QFile file(fileDialog.getSaveFileName(this, "保存文件", "", "html文件(*.html);;"));
     if (file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
         QTextStream textStream(&file);
@@ -731,7 +732,18 @@ void Editor::on_actionsave_triggered()
 
 void Editor::on_actionexport_triggered()
 {
-
+    QFileDialog fileDialog(this);
+    QString file = fileDialog.getSaveFileName(this, "导出文件", "", "tex文件(*.tex);;");
+    qDebug() << "open file:" << file;
+    QFile tmp("tmp.html");
+    if(tmp.open(QIODevice::WriteOnly | QIODevice::Text))
+    {
+        QTextStream textStream(&tmp);
+        textStream << ui->textEdit->toHtml();
+        tmp.close();
+    }
+    QProcess process(this);
+    qDebug() << process.execute("plugins/jre/bin/java -jar plugins/htmltolatex.jar -output "+file);
 }
 
 Editor::~Editor()
