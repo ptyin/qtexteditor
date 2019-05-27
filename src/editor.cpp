@@ -12,6 +12,7 @@
 #include <QtCore/QProcess>
 #include "editor.h"
 #include "ui_editor.h"
+#include "AccountAccess.h"
 
 Editor::Editor(QWidget *parent) :
         QMainWindow(parent),
@@ -732,6 +733,7 @@ void Editor::on_actionsave_triggered()
 
 void Editor::on_actionexport_triggered()
 {
+    AccountAccess * access = new AccountAccess();
     QFileDialog fileDialog(this);
     QString file = fileDialog.getSaveFileName(this, "导出文件", "", "tex文件(*.tex);;");
     qDebug() << "open file:" << file;
