@@ -12,7 +12,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTOUIC ON)
 
 # Find the QtWidgets library
-find_package(Qt5 COMPONENTS Core Widgets Gui Sql Network REQUIRED)
+find_package(Qt5 COMPONENTS Core Widgets Gui Sql Network PrintSupport REQUIRED)
 
 # Populate a CMake variable with the sources
 set(SOURCELIST
@@ -37,7 +37,7 @@ set(SOURCELIST
         src/mtextedit.cpp
         src/mtextedit.h
         src/HTMLParser.cpp
-        src/HTMLParser.h src/AccountAccess.cpp src/AccountAccess.h)
+        src/HTMLParser.h src/AccountManager.cpp src/AccountManager.h)
 qt5_add_resources(SOURCELIST resources/lang.qrc resources/myqrc.qrc resources/qss.qrc)
 message("${PROJECT_BINARY_DIR}")
 file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/plugins)
@@ -48,5 +48,5 @@ add_executable(QtLaTeX ${SOURCELIST})
 add_executable(test test/main.cpp test/HTMLParser.cpp test/HTMLParser.h test/A.cpp test/A.h)
 #file(MAKE_DIRECTORY )
 # Use the Widgets module from Qt 5
-target_link_libraries(QtLaTeX Qt5::Widgets Qt5::Core Qt5::Gui Qt5::Sql Qt5::Network)
+target_link_libraries(QtLaTeX Qt5::Widgets Qt5::Core Qt5::Gui Qt5::Sql Qt5::Network Qt5::PrintSupport)
 target_link_libraries(test Qt5::Widgets Qt5::Core Qt5::Gui Qt5::Sql Qt5::Network)

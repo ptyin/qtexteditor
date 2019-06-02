@@ -11,7 +11,6 @@ int main(int argc, char *argv[])
     QTextCodec::setCodecForLocale(QTextCodec::codecForLocale());
 
 //    Login::setStyle("black.qss");
-
     Login w(nullptr);
 //    w.setStyle("white.qss");
 //    w.setGeometry()

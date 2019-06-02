@@ -8,7 +8,9 @@
 #include <QtGui/QTextList>
 #include <QtCore/QPointer>
 #include <QtWidgets/QLabel>
+#include <QtCore/QStringListModel>
 #include "ui_editor.h"
+#include "AccountManager.h"
 
 namespace Ui
 {
@@ -20,7 +22,7 @@ class Editor : public QMainWindow
 Q_OBJECT
 
 public:
-    explicit Editor(QWidget *parent = nullptr);
+    explicit Editor(AccountManager manager_, QWidget *parent = nullptr);
 
     virtual ~Editor();
 
@@ -150,13 +152,34 @@ private slots:
 
     void on_actionsave_triggered();
 
-    void on_actionexport_triggered();
+    void on_actionlatex_triggered();
+
+    void on_actionpdf_triggered();
+
+    void on_n_refresh_clicked();
+
+    void on_n_delete_clicked();
+
+    void on_n_upload_clicked();
+
+    void local_filesystem_view_doublclicked(const QModelIndex &);
+
+    void remote_file_view_doublclicked(const QModelIndex &);
+
+    void showRemoteFiles(QList<QString> *stringList);
+
+    void showFile(QString content){setHtml(content);}
 
 private:
     Ui::Editor *ui;
     QDirModel *dirModel;
+    QStringListModel *listModel;
+    AccountManager manager;
+    QList<QString> remoteFileList;
+
 
     void showLocalFileSystem();
+
 };
 
 #endif // EDITOR_H

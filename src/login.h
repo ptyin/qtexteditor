@@ -10,6 +10,7 @@
 #include <QMenu>
 #include <QAction>
 #include <QActionGroup>
+#include "AccountManager.h"
 
 
 namespace Ui
@@ -55,6 +56,10 @@ signals:
 
 private slots:
 
+    void login_success();
+
+    void on_btn_annonymous_clicked();
+
     void on_btn_login_clicked();
 
     void on_btn_regist_clicked();
@@ -87,6 +92,7 @@ private:
         QString userName;
         QString passwd;
         QString email;
+        QString server;
     };
     bool m_Drag;
     QPoint m_point;
@@ -110,6 +116,7 @@ private:
     QActionGroup *actGrp;
     QList<bool> is_remembered;
 
+    AccountManager manager;
 public:
     UserInfoStu user_info_stu;
     QSqlDatabase db;

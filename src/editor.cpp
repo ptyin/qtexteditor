@@ -10,15 +10,24 @@
 #include <QtCore/QSettings>
 #include <QImageReader>
 #include <QtCore/QProcess>
+#include <QtPrintSupport/QPrinter>
+#include <QList>
 #include "editor.h"
 #include "ui_editor.h"
-#include "AccountAccess.h"
+#include "AccountManager.h"
 
-Editor::Editor(QWidget *parent) :
+Editor::Editor(AccountManager manager_, QWidget *parent):
+        manager(manager_),
         QMainWindow(parent),
         ui(new Ui::Editor)
 {
+    manager = manager_;
     ui->setupUi(this);
+    connect(&manager, SIGNAL(return_files_list(QList<QString> *)), this, SLOT(showRemoteFiles(QList<QString> *)));
+    connect(&manager, SIGNAL(return_content(QString)), this, SLOT(showFile(QString)));
+    connect(ui->remote_file_view, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(remote_file_view_doublclicked(const QModelIndex &)));
+    connect(ui->local_filesystem_view, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(local_filesystem_view_doublclicked(const QModelIndex &)));
+
 //    connect(ui->actionopen, SIGNAL(triggered()), this, SLOT(on_actionopen_triggered()));
 //    connect(ui->actionopen_folder, SIGNAL(triggered()), this, SLOT(on_actionopen_folder_triggered()));
 //    connect(ui->actionsave, SIGNAL(triggered()), this, SLOT(on_actionsave_triggered()));
@@ -183,7 +192,7 @@ Editor::Editor(QWidget *parent) :
 
 void Editor::showLocalFileSystem()
 {
-    dirModel = new QDirModel;
+    dirModel = new QDirModel(this);
     dirModel->setReadOnly(false);
     dirModel->setSorting(QDir::DirsFirst | QDir::IgnoreCase | QDir::Name);
 
@@ -198,6 +207,15 @@ void Editor::showLocalFileSystem()
 //    ui->local_filesystem_view->expand(index);
 //    ui->local_filesystem_view->scrollTo(index);
 //    ui->local_filesystem_view->resizeColumnToContents(index.column());
+}
+
+void Editor::showRemoteFiles(QList<QString> *stringList)
+{
+    remoteFileList = *stringList;
+    listModel = new QStringListModel(this);
+    ui->remote_file_view->setModel(listModel);
+    listModel->setStringList(*stringList);
+    delete stringList;
 }
 
 void Editor::textSource()
@@ -709,7 +727,7 @@ void Editor::on_actionopen_triggered()
     QFile file(fileDialog.getOpenFileName(this, "打开文件", "", "html文件(*.html);;"));
     if (file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
-        ui->textEdit->setHtml(file.readAll());
+        setHtml(file.readAll());
         file.close();
     }
 }
@@ -727,13 +745,13 @@ void Editor::on_actionsave_triggered()
     if (file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
         QTextStream textStream(&file);
-        textStream << ui->textEdit->toHtml();
+        textStream << toHtml();
     }
 }
 
-void Editor::on_actionexport_triggered()
+void Editor::on_actionlatex_triggered()
 {
-    AccountAccess * access = new AccountAccess();
+    AccountManager * access = new AccountManager();
     QFileDialog fileDialog(this);
     QString file = fileDialog.getSaveFileName(this, "导出文件", "", "tex文件(*.tex);;");
     qDebug() << "open file:" << file;
@@ -741,11 +759,54 @@ void Editor::on_actionexport_triggered()
     if(tmp.open(QIODevice::WriteOnly | QIODevice::Text))
     {
         QTextStream textStream(&tmp);
-        textStream << ui->textEdit->toHtml();
+        textStream << toHtml();
         tmp.close();
     }
     QProcess process(this);
     qDebug() << process.execute("java -jar plugins/htmltolatex.jar -output "+file);
+}
+
+void Editor::on_actionpdf_triggered()
+{
+    QString file = QFileDialog::getSaveFileName(this, "导出文件", "", "pdf文件(*.pdf);;");
+    QPrinter printer(QPrinter::HighResolution);
+    printer.setOutputFormat(QPrinter::PdfFormat);
+    printer.setOutputFileName(file);
+    document()->print(&printer);
+}
+
+void Editor::on_n_refresh_clicked()
+{
+    manager.getFiles();
+}
+
+void Editor::on_n_delete_clicked()
+{
+    QModelIndex modelIndex = ui->remote_file_view->currentIndex();
+    QString filename = ui->remote_file_view->model()->itemData(modelIndex).value(0).toString();
+    manager.deleteFile(filename);
+}
+
+void Editor::on_n_upload_clicked()
+{
+    QString fileName = QInputDialog::getText(this, "输入文件名", "File Name:", QLineEdit::Normal);
+    manager.uploadFile(fileName, toHtml());
+}
+
+void Editor::local_filesystem_view_doublclicked(const QModelIndex &modelIndex)
+{
+    QFile file(dirModel->filePath(modelIndex));
+    qDebug() << file;
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text))
+    {
+        setHtml(file.readAll());
+        file.close();
+    }
+}
+
+void Editor::remote_file_view_doublclicked(const QModelIndex & modelIndex)
+{
+    manager.getContent(ui->remote_file_view->model()->itemData(modelIndex).value(0).toString());
 }
 
 Editor::~Editor()

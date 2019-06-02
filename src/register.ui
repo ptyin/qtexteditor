@@ -1,124 +1,155 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
-    <class>Register</class>
-    <widget class="QDialog" name="Register">
-        <property name="geometry">
-            <rect>
-                <x>0</x>
-                <y>0</y>
-                <width>236</width>
-                <height>314</height>
-            </rect>
-        </property>
-        <property name="windowTitle">
-            <string>Dialog</string>
-        </property>
-        <widget class="QLabel" name="labelName">
-            <property name="geometry">
-                <rect>
-                    <x>30</x>
-                    <y>40</y>
-                    <width>72</width>
-                    <height>20</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>用户名</string>
-            </property>
-        </widget>
-        <widget class="QLabel" name="labelPassword">
-            <property name="geometry">
-                <rect>
-                    <x>30</x>
-                    <y>80</y>
-                    <width>72</width>
-                    <height>20</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>密码</string>
-            </property>
-        </widget>
-        <widget class="QLabel" name="labelPasswordCheck">
-            <property name="geometry">
-                <rect>
-                    <x>30</x>
-                    <y>130</y>
-                    <width>72</width>
-                    <height>20</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>确认密码</string>
-            </property>
-        </widget>
-        <widget class="QLabel" name="labelEmail">
-            <property name="geometry">
-                <rect>
-                    <x>30</x>
-                    <y>180</y>
-                    <width>72</width>
-                    <height>20</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>邮箱</string>
-            </property>
-        </widget>
-        <widget class="QLineEdit" name="lineEditName">
-            <property name="geometry">
-                <rect>
-                    <x>120</x>
-                    <y>40</y>
-                    <width>91</width>
-                    <height>20</height>
-                </rect>
-            </property>
-        </widget>
-        <widget class="QLineEdit" name="lineEditPassword">
-            <property name="geometry">
-                <rect>
-                    <x>120</x>
-                    <y>80</y>
-                    <width>91</width>
-                    <height>20</height>
-                </rect>
-            </property>
-        </widget>
-        <widget class="QLineEdit" name="lineEditPasswordCheck">
-            <property name="geometry">
-                <rect>
-                    <x>120</x>
-                    <y>130</y>
-                    <width>91</width>
-                    <height>20</height>
-                </rect>
-            </property>
-        </widget>
-        <widget class="QLineEdit" name="lineEditEmail">
-            <property name="geometry">
-                <rect>
-                    <x>120</x>
-                    <y>180</y>
-                    <width>91</width>
-                    <height>20</height>
-                </rect>
-            </property>
-        </widget>
-        <widget class="QPushButton" name="registerCheckButton">
-            <property name="geometry">
-                <rect>
-                    <x>90</x>
-                    <y>260</y>
-                    <width>61</width>
-                    <height>23</height>
-                </rect>
-            </property>
-            <property name="text">
-                <string>注册</string>
-            </property>
-        </widget>
-    </widget>
-    <resources/>
-    <connections/>
+ <class>Register</class>
+ <widget class="QDialog" name="Register">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>244</width>
+    <height>314</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="labelName">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>40</y>
+     <width>72</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>用户名</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelPassword">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>80</y>
+     <width>72</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>密码</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelPasswordCheck">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>120</y>
+     <width>72</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>确认密码</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelEmail">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>160</y>
+     <width>72</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>邮箱</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditName">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>40</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditPassword">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>80</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditPasswordCheck">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>120</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditEmail">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>160</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="registerCheckButton">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>250</y>
+     <width>61</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>注册</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="labelServer">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>200</y>
+     <width>72</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>服务器</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEditServer">
+   <property name="geometry">
+    <rect>
+     <x>120</x>
+     <y>200</y>
+     <width>91</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>lineEditName</tabstop>
+  <tabstop>lineEditPassword</tabstop>
+  <tabstop>lineEditPasswordCheck</tabstop>
+  <tabstop>lineEditEmail</tabstop>
+  <tabstop>lineEditServer</tabstop>
+  <tabstop>registerCheckButton</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
 </ui>

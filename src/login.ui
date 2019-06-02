@@ -252,8 +252,32 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
+  <widget class="QPushButton" name="btn_annonymous">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>290</y>
+     <width>100</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>匿名登录</string>
+   </property>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>cBox_server</tabstop>
+  <tabstop>cBox_account</tabstop>
+  <tabstop>lineEdit_passwd</tabstop>
+  <tabstop>btn_login</tabstop>
+  <tabstop>checkBox_rPasswd</tabstop>
+  <tabstop>checkBox_autoLogin</tabstop>
+  <tabstop>btn_annonymous</tabstop>
+  <tabstop>btn_edit_pwd</tabstop>
+  <tabstop>btn_regist</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

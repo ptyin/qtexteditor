@@ -19,13 +19,15 @@ float opacity1 = 0.0, opacity2 = 1.0;
 
 Login::Login(QWidget *parent) :
         QWidget(parent),
-        ui(new Ui::Login)
+        ui(new Ui::Login),
+        manager(this)
 {
     ui->setupUi(this);
 
     init();
 
     connect(this, SIGNAL(close()), this, SLOT(close()));
+    connect(&manager, SIGNAL(login_success()), this, SLOT(login_success()));
 
 
 }
@@ -64,6 +66,8 @@ void Login::get_user_info()
     user_info_stu.userName = ui->cBox_account->currentText();
     user_info_stu.passwd.clear();
     user_info_stu.passwd = ui->lineEdit_passwd->text();
+    user_info_stu.server.clear();
+    user_info_stu.server = ui->cBox_server->currentText();
 }
 
 void Login::configWindow()
@@ -373,77 +377,67 @@ void Login::on_btn_login_clicked()
 {
     qDebug() << "login:" << user_info_stu.userName << user_info_stu.passwd;
     if (ui->cBox_account->currentText().isEmpty() ||
-        ui->lineEdit_passwd->text().isEmpty())
+        ui->lineEdit_passwd->text().isEmpty() ||
+        ui->cBox_server->currentText().isEmpty())
     {
-        QMessageBox::warning(this, tr("警告"), tr("请输入用户名和密码！"));
+        QMessageBox::warning(this, tr("警告"), tr("请同时输入服务器地址和用户名密码！"));
     } else
     {
         //TODO
-        int is_use_exist_flag = 0;       //判断用户是否存在
-        int is_use_nampwd_check_flag = 0;       //判断用户名和密码是否匹配
         get_user_info();
-
-        if (!db.open())
-        {
-            qDebug() << "database open fail login!";
-        } else
-        {
-            QSqlQuery query;
-            qDebug() << "database open success login!";
-            query.exec("select * from userInfo");
-            while (query.next())
-            {
-                QString userName = query.value(0).toString();
-                QString passwd = query.value(1).toString();
-                qDebug() << "login userName:::" << userName << "passwd:::" << passwd;
-
-                if (userName == user_info_stu.userName)
-                {
-                    is_use_exist_flag = true;              //用户存在
-                    if (passwd == user_info_stu.passwd)
-                    {
-                        QString sql_insert_server_address = "INSERT INTO serverList VALUES (:address);";
-                        query.prepare(sql_insert_server_address);
-                        query.bindValue(":address", ui->cBox_server->currentText());
-                        query.exec();
-                        if (ui->checkBox_rPasswd->isChecked())
-                        {
-                            query.prepare("update userInfo set rememberPasswd = 1 where name = :user;");
-                            query.bindValue(":user", userName);
-                            query.exec();
-                        } else
-                        {
-                            query.prepare("update userInfo set rememberPasswd = 0 where name = :user;");
-                            query.bindValue(":user", userName);
-                            query.exec();
-                        }
-
-                        is_use_nampwd_check_flag = true;          //用户名和密码匹配
-                        Editor *e = new Editor;
-                        e->setUser(userName);
-                        e->setServer(ui->cBox_server->currentText());
-                        e->show();
-                        emit close();
-                    }
-                }
-            }
-
-            if (is_use_exist_flag == false)
-            {
-                QMessageBox::information(this, tr("提示"), tr("用户不存在！"));
-            } else
-            {
-                if (is_use_nampwd_check_flag == false)
-                {
-                    QMessageBox::warning(this, tr("警告"), tr("用户密码错误！"));
-                }
-            }
-        }
-
-        db.close();
+        manager.setUsername(user_info_stu.userName);
+        manager.setPassword(user_info_stu.passwd);
+        manager.setServer(user_info_stu.server);
+        manager.login();
     }
 }
 
+void Login::on_btn_annonymous_clicked()
+{
+    Editor *e = new Editor(manager);
+    e->show();
+    emit close();
+}
+
+void Login::login_success()
+{
+    if (!db.open())
+    {
+        qDebug() << "database open fail login!";
+    } else
+    {
+        QSqlQuery query;
+        qDebug() << "database open success login!";
+        QString sql_insert_server_address = "INSERT INTO serverList VALUES (:address);";
+        query.prepare(sql_insert_server_address);
+        query.bindValue(":address", ui->cBox_server->currentText());
+        query.exec();
+        QString sql_insert_user = "INSERT INTO userInfo (name, passwd, email) VALUES (:username, :password, :email)";
+        query.prepare(sql_insert_user);
+        query.bindValue(":username", user_info_stu.userName);
+        query.bindValue(":password", user_info_stu.passwd);
+        query.bindValue(":email", user_info_stu.email);
+        query.exec();
+        if (ui->checkBox_rPasswd->isChecked())
+        {
+            query.prepare("update userInfo set rememberPasswd = 1 where name = :user;");
+            query.bindValue(":user", user_info_stu.userName);
+            query.exec();
+        } else
+        {
+            query.prepare("update userInfo set rememberPasswd = 0 where name = :user;");
+            query.bindValue(":user", user_info_stu.userName);
+            query.exec();
+        }
+        Editor *e = new Editor(manager);
+        e->setUser(user_info_stu.userName);
+        e->setServer(ui->cBox_server->currentText());
+        e->show();
+        emit close();
+    }
+
+    db.close();
+}
 
 ////注册button
 //void Login::on_btn_regist_clicked()
@@ -466,64 +460,67 @@ void Login::on_btn_regist_clicked()
     r.exec();    //注册页面r，仅仅获取信息.
 
 //    get_user_info();
-    if (user_info_stu.userName.isEmpty() || user_info_stu.passwd.isEmpty())
+    if (user_info_stu.userName.isEmpty() || user_info_stu.passwd.isEmpty() || user_info_stu.server.isEmpty())
     {
-        QMessageBox::information(this, tr("提示"), tr("请输入用户名和密码！"));
+        QMessageBox::warning(this, tr("提示"), tr("请同时输入服务器地址和用户名密码！"));
     } else
     {
-        bool existFlag = false;       //判断用户是否存在
-
-        if (!db.open())
-        {
-            qDebug() << "database open fail regist!";
-        } else
-        {
-            QSqlQuery query;
-            qDebug() << "database open success regist!";
-            query.prepare("select * from userInfo where name = :username;");
-            query.bindValue(":username", user_info_stu.userName);
-            query.exec();
-            qDebug() << query.lastQuery();
-            if (query.next())
-            {
-                QString userName = query.value("name").toString();
-                QString passwd = query.value("passwd").toString();
-                if (userName == user_info_stu.userName)
-                {
-                    existFlag = true;              //用户存在
-                }
-            }
-//            while (query.next())
+//        bool existFlag = false;       //判断用户是否存在
+        manager.setUsername(user_info_stu.userName);
+        manager.setPassword(user_info_stu.passwd);
+        manager.setServer(user_info_stu.server);
+        manager.registerUser(user_info_stu.email);
+//        if (!db.open())
+//        {
+//            qDebug() << "database open fail regist!";
+//        } else
+//        {
+//            QSqlQuery query;
+//            qDebug() << "database open success regist!";
+//            query.prepare("select * from userInfo where name = :username;");
+//            query.bindValue(":username", user_info_stu.userName);
+//            query.exec();
+//            qDebug() << query.lastQuery();
+//            if (query.first())
 //            {
-//                QString userName = query.value(0).toString();
-//                QString passwd = query.value(1).toString();
-//                qDebug() << "regist userName:::" << userName << "passwd:::" << passwd;
-//
+//                QString userName = query.value("name").toString();
+//                QString passwd = query.value("passwd").toString();
 //                if (userName == user_info_stu.userName)
 //                {
 //                    existFlag = true;              //用户存在
 //                }
 //            }
-
-            if (!existFlag)
-            {
-                if (query.exec(QString("insert into userInfo values ('%1','%2','%3', false)")
-                                       .arg(user_info_stu.userName).arg(user_info_stu.passwd)
-                                       .arg(user_info_stu.email)))
-                {
-                    qDebug() << "ddd:" << user_info_stu.userName << user_info_stu.passwd << user_info_stu.email;
-                    qDebug() << "regist:::" << query.lastQuery();
-                    ui->cBox_account->addItem(user_info_stu.userName);
-                    userPasswd.append(user_info_stu.passwd);
-                    QMessageBox::information(this, tr("提示"), tr("注册成功！"));
-                }
-
-            } else
-            {
-                QMessageBox::warning(this, tr("警告"), tr("用户已存在！"));
-            }
-        }
-        db.close();
+////            while (query.next())
+////            {
+////                QString userName = query.value(0).toString();
+////                QString passwd = query.value(1).toString();
+////                qDebug() << "regist userName:::" << userName << "passwd:::" << passwd;
+////
+////                if (userName == user_info_stu.userName)
+////                {
+////                    existFlag = true;              //用户存在
+////                }
+////            }
+//
+//            if (!existFlag)
+//            {
+//                if (query.exec(QString("insert into userInfo values ('%1','%2','%3', false)")
+//                                       .arg(user_info_stu.userName).arg(user_info_stu.passwd)
+//                                       .arg(user_info_stu.email)))
+//                {
+//                    qDebug() << "ddd:" << user_info_stu.userName << user_info_stu.passwd << user_info_stu.email;
+//                    qDebug() << "regist:::" << query.lastQuery();
+//                    ui->cBox_account->addItem(user_info_stu.userName);
+//                    userPasswd.append(user_info_stu.passwd);
+//                    QMessageBox::information(this, tr("提示"), tr("注册成功！"));
+//                }
+//
+//            } else
+//            {
+//                QMessageBox::warning(this, tr("警告"), tr("用户已存在！"));
+//            }
+//        }
+//        db.close();
     }
 }
 

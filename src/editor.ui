@@ -10,6 +10,12 @@
     <height>628</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>Editor</string>
   </property>
@@ -714,6 +720,9 @@
             <height>16777215</height>
            </size>
           </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
+          </property>
          </widget>
         </item>
         <item>
@@ -724,7 +733,73 @@
          </widget>
         </item>
         <item>
-         <widget class="QTreeView" name="remote_file_view">
+         <widget class="QFrame" name="frame_2">
+          <property name="minimumSize">
+           <size>
+            <width>202</width>
+            <height>25</height>
+           </size>
+          </property>
+          <property name="maximumSize">
+           <size>
+            <width>404</width>
+            <height>30</height>
+           </size>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QHBoxLayout" name="horizontalLayout_2">
+           <property name="spacing">
+            <number>2</number>
+           </property>
+           <property name="topMargin">
+            <number>0</number>
+           </property>
+           <property name="bottomMargin">
+            <number>0</number>
+           </property>
+           <item>
+            <widget class="QToolButton" name="n_upload">
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset theme="document">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="n_delete">
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset theme="edit-delete">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QToolButton" name="n_refresh">
+             <property name="text">
+              <string>...</string>
+             </property>
+             <property name="icon">
+              <iconset theme="view-refresh">
+               <normaloff>.</normaloff>.</iconset>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item>
+         <widget class="QListView" name="remote_file_view">
           <property name="sizePolicy">
            <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
             <horstretch>0</horstretch>
@@ -742,6 +817,9 @@
             <width>404</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="editTriggers">
+           <set>QAbstractItemView::NoEditTriggers</set>
           </property>
          </widget>
         </item>
@@ -783,10 +861,18 @@
     <property name="title">
      <string>File</string>
     </property>
+    <widget class="QMenu" name="menuexport">
+     <property name="title">
+      <string>export</string>
+     </property>
+     <addaction name="actionlatex"/>
+     <addaction name="actionpdf"/>
+    </widget>
     <addaction name="actionopen"/>
     <addaction name="actionopen_folder"/>
+    <addaction name="actionupload"/>
     <addaction name="actionsave"/>
-    <addaction name="actionexport"/>
+    <addaction name="menuexport"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -807,14 +893,29 @@
     <string>save</string>
    </property>
   </action>
-  <action name="actionexport">
-   <property name="text">
-    <string>export</string>
-   </property>
-  </action>
   <action name="actionopen_folder">
    <property name="text">
     <string>open folder</string>
+   </property>
+  </action>
+  <action name="actionupload">
+   <property name="text">
+    <string>upload</string>
+   </property>
+  </action>
+  <action name="actionexport_to_pdf">
+   <property name="text">
+    <string>export to pdf</string>
+   </property>
+  </action>
+  <action name="actionlatex">
+   <property name="text">
+    <string>latex</string>
+   </property>
+  </action>
+  <action name="actionpdf">
+   <property name="text">
+    <string>pdf</string>
    </property>
   </action>
  </widget>
