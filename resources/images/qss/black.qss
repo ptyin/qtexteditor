@@ -529,8 +529,6 @@ QLineEdit:!enabled {
 /**********文本编辑框**********/
 QTextEdit {
         border: 1px solid rgb(45, 45, 45);
-        color: rgb(175, 175, 175);
-        background: rgb(57, 58, 60);
 }
 
 /**********滚动区域**********/

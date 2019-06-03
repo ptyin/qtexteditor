@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>883</width>
+    <width>894</width>
     <height>628</height>
    </rect>
   </property>
@@ -20,963 +20,7 @@
    <string>Editor</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">QMainWindow#Editor{
-	 background-color: #222222;
-    color: #BBBBBB;
-}
-QTextEdit
-{
-	background-color: rgb(238, 238, 236);
-}
-QToolButton
-{
-	background-color: rgb(85, 87, 83);
-}
-Line
-{
-	
-	background-color: rgb(136, 138, 133);
-}
-/* === Shared === */
-QStackedWidget, QLabel, QPushButton, QRadioButton, QCheckBox, 
-QGroupBox, QStatusBar, QComboBox, QDialog, #frame, #frame_2 {
-    background-color: #222222;
-    color: #BBBBBB;
-    font-family: &quot;Segoe UI&quot;;
-}
-
-/* === QWidget === */
-QWidget:window {
-    background: #222222;
-    color: #BBBBBB;
-    font-family: &quot;Segoe UI&quot;;
-}
-
-/* === QToolTip === */
-QToolTip {
-    background-color: #000000;
-    border: 2px solid #333333;
-    color: yellow;
-}
-
-/* === QPushButton === */
-QPushButton {
-    border: 1px solid #333333;
-    padding: 4px;
-    min-width: 65px;
-    min-height: 12px;
-}
-
-QPushButton:hover {
-    background-color: #333333;
-    border-color: #444444;
-}
-
-QPushButton:pressed {
-    background-color: #111111;
-    border-color: #333333;
-    color: yellow;
-}
-
-QPushButton:disabled {
-    color: #333333;
-}
-
-/* === Checkable items === */
-QCheckBox::indicator, QRadioButton::indicator, QTreeView::indicator {
-    width: 16px;
-    height: 16px;
-    background-color: #111111;
-    border: 1px solid #333333;
-}
-
-QRadioButton::indicator {
-    border-radius: 8px;
-}
-
-QCheckBox::indicator::checked, QRadioButton::indicator::checked, QTreeView::indicator::checked {
-    background-color: qradialgradient(cx:0.5, cy:0.5, fx:0.25, fy:0.15, radius:0.3, stop:0 #BBBBBB, stop:1 #111111);
-}
-
-QCheckBox::indicator:disabled, QRadioButton::indicator:disabled, QTreeView::indicator:disabled {
-    background-color: #444444;
-}
-
-QCheckBox::indicator::checked:disabled, QRadioButton::indicator::checked:disabled, QTreeView::indicator::checked:disabled {
-    background-color: qradialgradient(cx:0.5, cy:0.5, fx:0.25, fy:0.15, radius:0.3, stop:0 #BBBBBB, stop:1 #444444);
-}
-
-/* === QComboBox === */
-QComboBox {
-    background-color: black;
-    border: 1px solid #333333;
-    color: white;
-}
-
-QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    border-left: 1px solid #333333;
-}
-
-QComboBox::down-arrow {
-    border: 2px solid #333333;
-    width: 6px;
-    height: 6px;
-    background: #5f5f5f;
-}
-
-/* === QGroupBox === */
-QGroupBox {
-    border: 2px solid #333333;
-    margin-top: 2ex;
-}
-
-QGroupBox::title {
-    color: yellow;
-    subcontrol-origin: margin;
-    subcontrol-position: top left;
-    margin-left: 5px;
-}
-
-/* === QTabWidget === */
-QTabWidget::pane {
-    background: #222222;
-    border: 2px solid #333333;
-}
-
-/* === QTabBar === */
-QTabBar::tab {
-    background: transparent;
-    border: 1px solid #333333;
-    border-bottom: none;
-    color: #BBBBBB;
-    padding-left: 5px;
-    padding-right: 10px;
-    padding-top: 3px;
-    padding-bottom: 3px;
-}
-
-QTabBar::tab:hover {
-    background-color: #333333;
-    border: 1px solid #444444;
-    border-bottom: none;
-}
-
-QTabBar::tab:selected {
-    background-color: #111111;
-    border: 1px solid #333333;
-    border-top: 1px solid yellow;
-    border-bottom: none;
-    color: yellow
-}
-
-/* === QToolBar === */
-QToolBar {
-    background-color: #222222;
-    border: none;
-    padding: 1px;
-}
-
-QToolBar:handle {
-    background: #222222;
-    border-left: 1px dotted yellow;
-    color: #BBBBBB;
-}
-
-QToolBar::separator {
-    width: 6px;
-    background-color: #222222;
-}
-
-/* === QToolButton === */
-QToolButton {
-    border: 1px solid #333333;
-    margin: 1px;
-}
-
-QToolButton:hover {
-    background-color: #333333;
-    border: 1px solid #444444;
-}
-
-QToolButton[popupMode=&quot;1&quot;] { /* only for MenuButtonPopup */
-    padding-right: 20px; /* make way for the popup button */
-}
-
-QToolButton::menu-button {
-    border-left: 1px solid #333333;
-    background: transparent;
-    width: 16px;
-}
-
-QToolButton::menu-button:hover {
-    border-left: 1px solid #444444;
-    background: transparent;
-    width: 16px;
-}
-
-QToolButton:checked, QToolButton:pressed {
-    background-color: #111111;
-    color: yellow;
-}
-
-/* === QMenu === */
-QMenu {
-    background-color: black;
-    border: 1px solid gray;
-    color: white;
-    padding: 1px;
-}
-
-QMenu::item {
-    padding: 2px 25px 2px 20px;
-    border: 1px solid transparent;
-}
-
-QMenu::item:disabled {
-    color: #666666;
-}
-
-QMenu::item:selected {
-    border-color: gray;
-    background: #222222;
-}
-
-QMenu::icon:checked {
-
-}
-
-QMenu::separator {
-    height: 1px;
-    background: #222222;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-}
-
-QMenu::indicator {
-    width: 13px;
-    height: 13px;
-}
-
-/* === QMenuBar === */
-QMenuBar {
-    background-color: black;
-    color: white;
-}
-
-QMenuBar::item {
-    background: transparent;
-}
-
-QMenuBar::item:disabled {
-    color: gray;
-}
-
-QMenuBar::item:selected {
-    background: #222222;
-}
-
-QMenuBar::item:pressed {
-    background: #444444;
-}
- 
-/* === QScrollBar:vertical === */
-QScrollBar:vertical {
-    background: #111111;
-    width: 16px;
-    margin: 16px 0 16px 0;
-}
-
-QScrollBar::handle:vertical {
-    background: #555555;
-    min-height: 16px;
-}
-
-QScrollBar::add-line:vertical {
-    background: #444444;
-    height: 16px;
-    subcontrol-position: bottom;
-    subcontrol-origin: margin;
-}
-
-QScrollBar::sub-line:vertical {
-    background: #444444;
-    height: 16px;
-    subcontrol-position: top;
-    subcontrol-origin: margin;
-}
-
-QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
-    background: none;
-}
-
-QScrollBar:up-arrow:vertical, QScrollBar:down-arrow:vertical {
-    border: 2px solid #333333;
-    width: 6px;
-    height: 6px;
-    background: #5f5f5f;
-}
-
-/* === QScrollBar:horizontal === */
-QScrollBar:horizontal {
-    background: #111111;
-    height: 16px;
-    margin: 0 16px 0 16px;
-}
-
-QScrollBar::handle:horizontal {
-    background: #555555;
-    min-width: 16px;
-}
-
-QScrollBar::add-line:horizontal {
-    background: #444444;
-    width: 16px;
-    subcontrol-position: right;
-    subcontrol-origin: margin;
-}
-
-QScrollBar::sub-line:horizontal {
-    background: #444444;
-    width: 16px;
-    subcontrol-position: left;
-    subcontrol-origin: margin;
-}
-
-QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
-    background: none;
-}
-
-QScrollBar:left-arrow:horizontal, QScrollBar:right-arrow:horizontal {
-    border: 2px solid #333333;
-    width: 6px;
-    height: 6px;
-    background: #5f5f5f;
-}
-
-/* =================== */
-QLineEdit, QListView, QTreeView, QTableView, QAbstractSpinBox {
-    background-color: black;
-    color: #BBBBBB;
-    border: 1px solid #333333;
-}
-
-QAbstractScrollArea, QLineEdit, QTextEdit, QAbstractSpinBox, QComboBox {
-    border-color: #333333;
-    border: 1px solid #333333;
-
-}
-
-/* === QHeaderView === */
-QHeaderView::section {
-    background: #222222;
-    border: 0;
-    color: #BBBBBB;
-    padding: 3px 0 3px 4px;
-}
-
-/* === QListView === */
-QListView::item:hover {
-    background: #333333;
-}
-
-QListView::item:selected {
-    background: #111111;
-    color: yellow;
-}
-
-/* === QTableView === */
-QTableView::item:hover {
-    background: #333333;
-}
-
-QTableView::item:hover {
-    background: #111111;
-    color: yellow;
-}
-
-/* === QTreeView === */
-QTreeView::item {
-    background: black;
-}
-
-QTreeView::item:hover {
-    background: #333333;
-}
-
-QTreeView::item:selected {
-    background: #111111;
-    color: yellow;
-}
-
-QTreeView::branch {
-
-}
-
-QTreeView::branch:has-siblings:adjoins-item {
-
-}
-
-QTreeView::branch:has-siblings:!adjoins-item {
-
-}
-
-QTreeView::branch:closed:has-children:has-siblings {
-
-}
-
-QTreeView::branch:has-children:!has-siblings:closed {
-
-}
-
-QTreeView::branch:!has-children:!has-siblings:adjoins-item {
-
-}
-
-QTreeView::branch:open:has-children:has-siblings {
-
-}
-
-QTreeView::branch:open:has-children:!has-siblings {
-
-}
-
-/* === Customizations === */
-QFrame#infoLabel {
-    border: 1px inset #333333;
-}
-
-2.
-.QWidget {
-   background-color: beige;
-}
-
-QToolBar {
-    background-color: beige;
-}
-
-QDialog, QFileDialog {
-    background-color: beige;
-}
-
-QTabWidget::pane { /* The tab widget frame */
-    border-top: 2px solid #C2C7CB;
-}
-
-QTabWidget::tab-bar {
-    left: 5px; /* move to the right by 5px */
-}
-
-QTabBar, QTabWidget {
-    background-color: beige;
-}
-QTabBar::tab {
-     background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                 stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,
-                                 stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);
-     border: 1px solid darkkhaki;
-     border-bottom-color: #C2C7CB; /* same as the pane color */
-     border-top-left-radius: 4px;
-     border-top-right-radius: 4px;
-     min-width: 8ex;
-     padding: 2px;
- }
-QTabBar::tab:selected, QTabBar::tab:hover {
-    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                stop: 0 #fafafa, stop: 0.4 #f4f4f4,
-                                stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);
-}
-
-QTabBar::tab:selected {
-    border-color: #9B9B9B;
-    border-bottom-color: #C2C7CB; /* same as pane color */
-}
-
-QTabBar::tab:!selected {
-    margin-top: 2px; /* make non-selected tabs look smaller */
-}
-
-/* Nice Windows-XP-style password character. */
-QLineEdit[echoMode=&quot;2&quot;] {
-    lineedit-password-character: 9679;
-}
-
-QHeaderView::section {
-     background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                                       stop:0 #616161, stop: 0.5 #505050,
-                                       stop: 0.6 #434343, stop:1 #656565);
-     color: white;
-     padding-left: 4px;
-     border: 1px solid #6c6c6c;
- }
-
- QHeaderView::section:checked
- {
-     background-color: red;
- }
-
-
-/* We provide a min-width and min-height for push buttons
-   so that they look elegant regardless of the width of the text. */
-QPushButton {
-    background-color: palegoldenrod;
-    border-width: 2px;
-    border-color: darkkhaki;
-    border-style: solid;
-    border-radius: 5;
-    padding: 3px;
-    min-width: 9ex;
-    min-height: 2.5ex;
-}
-
-QPushButton:hover {
-   background-color: khaki;
-}
-
-/* Increase the padding, so the text is shifted when the button is
-   pressed. */
-QPushButton:pressed {
-    padding-left: 5px;
-    padding-top: 5px;
-    background-color: #d0d67c;
-}
-
-QLabel, QAbstractButton {
-    font: bold;
-}
-
-/* Mark mandatory fields with a brownish color. */
-.mandatory {
-    color: brown;
-}
-
-/* Bold text on status bar looks awful. */
-QStatusBar QLabel {
-   font: normal;
-}
-
-QStatusBar::item {
-    border-width: 1;
-    border-color: darkkhaki;
-    border-style: solid;
-    border-radius: 2;
-}
-
-QStackedWidget, QComboBox, QLineEdit, QSpinBox, QTextEdit, QListView, QWebView, QTreeView, QHeaderView {
-    background-color: cornsilk;
-    selection-color: #0a214c; 
-    selection-background-color: #C19A6B;
-}
-
-QListView {
-    show-decoration-selected: 1;
-}
-
-QListView::item:hover {
-    background-color: wheat;
-}
-
-/* We reserve 1 pixel space in padding. When we get the focus,
-   we kill the padding and enlarge the border. This makes the items
-   glow. */
-QLineEdit, QFrame {
-    border-width: 1px;
-    padding: 1px;
-    border-style: solid;
-    border-color: darkkhaki;
-    border-radius: 5px;
-}
-
-/* As mentioned above, eliminate the padding and increase the border. */
-QLineEdit:focus, QFrame:focus {
-    border-width: 3px;
-    padding: 0px;
-}
-
-/* A QLabel is a QFrame  */
-QLabel {
-    border: none;
-    padding: 0;
-    background: none;
-}
-
-/* A QToolTip is a QLabel  */
-QToolTip {
-    border: 2px solid darkkhaki;
-    padding: 5px;
-    border-radius: 3px;
-    opacity: 200;
-}
-
-/* Nice to have the background color change when hovered. */
-QRadioButton:hover, QCheckBox:hover {
-    background-color: wheat;
-}
-
-/* Force the dialog's buttons to follow the Windows guidelines. */
-QDialogButtonBox {
-    button-layout: 0;
-}
-
-
-3.
-/*
-    Style by evilworks, 2012-2013. pollux@lavabit.com
-    This file is Public Domain.
-*/
-
-/* === Shared === */
-QStackedWidget, QLabel, QPushButton, QRadioButton, QCheckBox, 
-QGroupBox, QStatusBar, QToolButton, QComboBox, QDialog, QTabBar {
-    font-family: &quot;Segoe UI&quot;;
-    background-color: #888;
-    color: #000;
-}
-
-/* === QWidget === */
-QWidget:window {
-    font-family: 'Segoe UI';
-    background-color: #888;
-}
-
-/* === QPushButton === */
-QPushButton {
-    border: 1px solid #555;
-    padding: 4px;
-    min-width: 65px;
-    min-height: 12px;
-}
-
-QPushButton:hover {
-    background-color: #999;
-}
-
-QPushButton:pressed {
-    background-color: #333;
-    border-color: #555;
-    color: #AAA;
-}
-
-QPushButton:disabled {
-    color: #333333;
-}
-
-/* === QComboBox === */
-QComboBox {
-    background-color: #AAA;
-    border: 1px solid #555;
-    color: black;
-}
-
-QComboBox::drop-down {
-    subcontrol-origin: padding;
-    subcontrol-position: top right;
-    border-left: 1px solid #333333;
-}
-
-/* === QGroupBox === */
-QGroupBox {
-    border: 1px solid #555;
-    margin-top: 2ex;
-}
-
-QGroupBox::title {
-    color: black;
-    subcontrol-origin: margin;
-    subcontrol-position: top left;    
-    border: 1px solid #555;
-}
-
-/* === QTabBar === */
-QTabBar::tab {
-    border-bottom: none;
-    color: #000;
-    padding: 4px;
-    background-color: #888;
-    border: 1px solid #555;
-}
-
-QTabBar::tab:hover {
-    background-color: #AAA;
-}
-
-QTabBar::tab:selected {
-    background-color: #000;
-    color: white;
-}
-
-/* === QTabWidget === */
-QTabWidget::pane {
-    background: #888;
-    border: 1px solid #555;
-}
-
-
-/* === QToolBar === */
-QToolBar {
-    background: #949494;
-    border: none;
-    padding-left: 0px;
-    padding-right: 0px;
-    margin: 2px;
-}
-
-QToolBar::separator {
-    width: 1px;
-    margin-left: 3px;
-    margin-right: 3px;
-    background-color: #555;
-}
-
-/* === QToolButton === */
-QToolButton {
-    border: 1px solid #666;
-    margin: 1px;
-}
-
-QToolButton:hover {
-    background-color: #AAA;
-}
-
-QToolButton[popupMode=&quot;1&quot;] { /* only for MenuButtonPopup */
-    padding-right: 20px; /* make way for the popup button */
-}
-
-QToolButton::menu-button {
-    border-left: 1px solid #666;
-    background: transparent;
-    width: 16px;
-}
-
-QToolButton::menu-button:hover {
-    border-left: 1px solid #666;
-    background: transparent;
-    width: 16px;
-}
-
-QToolButton:checked, QToolButton:pressed {
-    background-color: #000;
-    border: 1px solid #555;
-    color: white;
-}
-
-/* === QScrollBar:vertical === */
-QScrollBar:vertical {
-    width: 16px;
-    margin: 16px 0 16px 0;
-    background: #333;
-}
-
-QScrollBar::handle:vertical {
-    background: #888;
-    min-height: 16px;
-    border-top: 1px solid #666;
-    border-bottom: 1px solid #666;
-}
-
-QScrollBar::add-line:vertical {
-    background: #888;
-    height: 16px;
-    subcontrol-position: bottom;
-    subcontrol-origin: margin;
-}
-
-QScrollBar::sub-line:vertical {
-    background: #888;
-    height: 16px;
-    subcontrol-position: top;
-    subcontrol-origin: margin;
-}
-
-QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
-    background: none;
-}
-
-/* === QScrollBar:horizontal === */
-QScrollBar:horizontal {
-    height: 16px;
-    margin: 0 16px 0 16px;
-    background: #333;
-}
-
-QScrollBar::handle:horizontal {
-    background: #888;
-    min-width: 16px;
-    border-left: 1px solid #666;
-    border-right: 1px solid #666;
-}
-
-QScrollBar::add-line:horizontal {
-    background: #888;
-    width: 16px;
-    subcontrol-position: right;
-    subcontrol-origin: margin;
-}
-
-QScrollBar::sub-line:horizontal {
-    background: #888;
-    width: 16px;
-    subcontrol-position: left;
-    subcontrol-origin: margin;
-}
-
-QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
-    background: none;
-}
-
-/* === QMenu === */
-QMenu {
-    background-color: black;
-    border: 1px solid gray;
-    color: white;
-    padding: 1px;
-}
-
-QMenu::item {
-    padding: 2px 25px 2px 20px;
-    border: 1px solid transparent;
-}
-
-QMenu::item:disabled {
-    color: #666666;
-}
-
-QMenu::item:selected {
-    border-color: gray;
-    background: #222222;
-}
-
-QMenu::icon:checked {
-
-}
-
-QMenu::separator {
-    height: 1px;
-    background: #222222;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 1px;
-    margin-bottom: 1px;
-}
-
-QMenu::indicator {
-    width: 13px;
-    height: 13px;
-}
-
-/* === QMenuBar === */
-QMenuBar {
-    background-color: black;
-    color: white;
-}
-
-QMenuBar::item {
-    background: transparent;
-}
-
-QMenuBar::item:disabled {
-    color: gray;
-}
-
-QMenuBar::item:selected {
-    background: #222222;
-}
-
-QMenuBar::item:pressed {
-    background: #444444;
-}
-/* =================== */
-QLineEdit, QListView, QTreeView, QTableView, QAbstractSpinBox {
-    background-color: #AAA;
-    color: #000;
-    border: 1px solid #555;
-}
-
-QAbstractScrollArea, QLineEdit, QTextEdit, QAbstractSpinBox, QComboBox {
-    border: 1px solid #555;
-}
-
-/* === QHeaderView === */
-QHeaderView::section {
-    height: 20px;
-}
-
-QHeaderView::section {
-    background: #666;
-    border: 0;
-    color: #000;
-    padding-left: 4px;
-}
-
-/* === QListView === */
-QListView::item:hover {
-    background: #AAA;
-}
-
-QListView::item:selected {
-    background: #333;
-    color: #AAA;
-}
-
-/* === QTableView === */
-QTableView::item:hover {
-    background: #333333;
-}
-
-QTableView::item:hover {
-    background: #111111;
-    color: yellow;
-}
-
-/* === QTreeView === */
-QTreeView::item {
-    background: #AAA;
-}
-
-QTreeView::item:hover {
-    background: #CCC;
-}
-
-QTreeView::item:selected {
-    background: #333;
-    color: #AAA;
-}
-
-QTreeView::branch {
-
-}
-
-QTreeView::branch:has-siblings:adjoins-item {
-
-}
-
-QTreeView::branch:has-siblings:!adjoins-item {
-
-}
-
-QTreeView::branch:closed:has-children:has-siblings {
-
-}
-
-QTreeView::branch:has-children:!has-siblings:closed {
-
-}
-
-QTreeView::branch:!has-children:!has-siblings:adjoins-item {
-
-}
-
-QTreeView::branch:open:has-children:has-siblings {
-
-}
-
-QTreeView::branch:open:has-children:!has-siblings {
-
-}
-</string>
+   <string notr="true"/>
   </property>
   <widget class="QWidget" name="centralwidget">
    <property name="styleSheet">
@@ -1013,7 +57,10 @@ QTreeView::branch:open:has-children:!has-siblings {
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">QFrame#frame
+{
+	background-color: rgb(226, 226, 226);
+}</string>
       </property>
       <property name="frameShape">
        <enum>QFrame::Panel</enum>
@@ -1032,7 +79,7 @@ QTreeView::branch:open:has-children:!has-siblings {
          </property>
          <property name="minimumSize">
           <size>
-           <width>863</width>
+           <width>870</width>
            <height>40</height>
           </size>
          </property>
@@ -1041,6 +88,9 @@ QTreeView::branch:open:has-children:!has-siblings {
            <width>1200</width>
            <height>16777215</height>
           </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
          </property>
          <layout class="QHBoxLayout" name="horizontalLayout_3">
           <property name="spacing">
@@ -1110,6 +160,9 @@ QTreeView::branch:open:has-children:!has-siblings {
             <property name="toolTip">
              <string>Undo (CTRL+Z)</string>
             </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string>Undo</string>
             </property>
@@ -1136,6 +189,9 @@ QTreeView::branch:open:has-children:!has-siblings {
             <property name="toolTip">
              <string>Redo</string>
             </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string>Redo</string>
             </property>
@@ -1159,12 +215,15 @@ QTreeView::branch:open:has-children:!has-siblings {
             <property name="toolTip">
              <string>Cut (CTRL+X)</string>
             </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string>Cut</string>
             </property>
             <property name="icon">
-             <iconset theme="edit-cut">
-              <normaloff>.</normaloff>.</iconset>
+             <iconset resource="../resources/myqrc.qrc">
+              <normaloff>:/images/ico/editor-cut.png</normaloff>:/images/ico/editor-cut.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -1182,12 +241,15 @@ QTreeView::branch:open:has-children:!has-siblings {
             <property name="toolTip">
              <string>Copy (CTRL+C)</string>
             </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string>Copy</string>
             </property>
             <property name="icon">
-             <iconset theme="edit-copy">
-              <normaloff>.</normaloff>.</iconset>
+             <iconset resource="../resources/myqrc.qrc">
+              <normaloff>:/images/ico/editor-copy .png</normaloff>:/images/ico/editor-copy .png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -1205,12 +267,15 @@ QTreeView::branch:open:has-children:!has-siblings {
             <property name="toolTip">
              <string>Paste (CTRL+V)</string>
             </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string>Paste</string>
             </property>
             <property name="icon">
-             <iconset theme="edit-paste">
-              <normaloff>.</normaloff>.</iconset>
+             <iconset resource="../resources/myqrc.qrc">
+              <normaloff>:/images/ico/editor-paste.png</normaloff>:/images/ico/editor-paste.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -1229,17 +294,29 @@ QTreeView::branch:open:has-children:!has-siblings {
           </item>
           <item>
            <widget class="QToolButton" name="f_split_paragraph">
+            <property name="toolTip">
+             <string>Horizental Line</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string>...</string>
             </property>
             <property name="icon">
              <iconset resource="../resources/myqrc.qrc">
-              <normaloff>:/images/ico/split-paragraph.png</normaloff>:/images/ico/split-paragraph.png</iconset>
+              <normaloff>:/images/ico/editor-hr.png</normaloff>:/images/ico/editor-hr.png</iconset>
             </property>
            </widget>
           </item>
           <item>
            <widget class="QToolButton" name="f_split_page">
+            <property name="toolTip">
+             <string>Double Horizental Line</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string>...</string>
             </property>
@@ -1251,11 +328,20 @@ QTreeView::branch:open:has-children:!has-siblings {
           </item>
           <item>
            <widget class="QToolButton" name="f_link">
+            <property name="minimumSize">
+             <size>
+              <width>27</width>
+              <height>27</height>
+             </size>
+            </property>
             <property name="focusPolicy">
              <enum>Qt::ClickFocus</enum>
             </property>
             <property name="toolTip">
              <string>Link (CTRL+L)</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Link</string>
@@ -1290,17 +376,20 @@ QTreeView::branch:open:has-children:!has-siblings {
             <property name="toolTip">
              <string notr="true">Bold (CTRL+B)</string>
             </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string>Bold</string>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>../resources/images/ico/editor-bold.png</normaloff>../resources/images/ico/editor-bold.png</iconset>
+             <iconset resource="../resources/myqrc.qrc">
+              <normaloff>:/images/ico/editor-bold.png</normaloff>:/images/ico/editor-bold.png</iconset>
             </property>
             <property name="iconSize">
              <size>
-              <width>16</width>
-              <height>16</height>
+              <width>20</width>
+              <height>20</height>
              </size>
             </property>
             <property name="checkable">
@@ -1316,6 +405,9 @@ QTreeView::branch:open:has-children:!has-siblings {
             <property name="toolTip">
              <string>Italic (CTRL+I)</string>
             </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string>Italic</string>
             </property>
@@ -1325,8 +417,8 @@ QTreeView::branch:open:has-children:!has-siblings {
             </property>
             <property name="iconSize">
              <size>
-              <width>16</width>
-              <height>16</height>
+              <width>20</width>
+              <height>20</height>
              </size>
             </property>
             <property name="checkable">
@@ -1342,6 +434,9 @@ QTreeView::branch:open:has-children:!has-siblings {
             <property name="toolTip">
              <string>Underline (CTRL+U)</string>
             </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string>Underline</string>
             </property>
@@ -1351,8 +446,8 @@ QTreeView::branch:open:has-children:!has-siblings {
             </property>
             <property name="iconSize">
              <size>
-              <width>16</width>
-              <height>16</height>
+              <width>20</width>
+              <height>20</height>
              </size>
             </property>
             <property name="checkable">
@@ -1362,6 +457,21 @@ QTreeView::branch:open:has-children:!has-siblings {
           </item>
           <item>
            <widget class="QToolButton" name="f_strikeout">
+            <property name="minimumSize">
+             <size>
+              <width>27</width>
+              <height>27</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>27</width>
+              <height>27</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string/>
             </property>
@@ -1383,8 +493,11 @@ QTreeView::branch:open:has-children:!has-siblings {
           </item>
           <item>
            <widget class="QToolButton" name="f_justify_left">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
-             <string>...</string>
+             <string>Align Left</string>
             </property>
             <property name="icon">
              <iconset resource="../resources/myqrc.qrc">
@@ -1397,8 +510,11 @@ QTreeView::branch:open:has-children:!has-siblings {
           </item>
           <item>
            <widget class="QToolButton" name="f_justify_center">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
-             <string>...</string>
+             <string>Align Center</string>
             </property>
             <property name="icon">
              <iconset resource="../resources/myqrc.qrc">
@@ -1411,8 +527,11 @@ QTreeView::branch:open:has-children:!has-siblings {
           </item>
           <item>
            <widget class="QToolButton" name="f_justify_right">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
-             <string>...</string>
+             <string>Align Right</string>
             </property>
             <property name="icon">
              <iconset resource="../resources/myqrc.qrc">
@@ -1437,6 +556,9 @@ QTreeView::branch:open:has-children:!has-siblings {
             </property>
             <property name="toolTip">
              <string>Bullet list (CTRL+-)</string>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
             </property>
             <property name="text">
              <string>Bullet list</string>
@@ -1464,6 +586,9 @@ QTreeView::branch:open:has-children:!has-siblings {
             <property name="toolTip">
              <string>Ordered list (CTRL+=)</string>
             </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string>Ordered list</string>
             </property>
@@ -1490,12 +615,15 @@ QTreeView::branch:open:has-children:!has-siblings {
             <property name="toolTip">
              <string>Decrease indentation (CTRL+,)</string>
             </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string>Decrease indentation</string>
             </property>
             <property name="icon">
-             <iconset theme="format-indent-less">
-              <normaloff>.</normaloff>.</iconset>
+             <iconset resource="../resources/myqrc.qrc">
+              <normaloff>:/images/ico/editor-reduce-indent.png</normaloff>:/images/ico/editor-reduce-indent.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -1513,12 +641,15 @@ QTreeView::branch:open:has-children:!has-siblings {
             <property name="toolTip">
              <string>Increase indentation (CTRL+.)</string>
             </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string>Increase indentation</string>
             </property>
             <property name="icon">
-             <iconset theme="format-indent-more">
-              <normaloff>.</normaloff>.</iconset>
+             <iconset resource="../resources/myqrc.qrc">
+              <normaloff>:/images/ico/editor-add-indent.png</normaloff>:/images/ico/editor-add-indent.png</iconset>
             </property>
             <property name="iconSize">
              <size>
@@ -1631,6 +762,9 @@ QTreeView::branch:open:has-children:!has-siblings {
           </item>
           <item>
            <widget class="QToolButton" name="f_image">
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string notr="true">...</string>
             </property>
@@ -1642,6 +776,15 @@ QTreeView::branch:open:has-children:!has-siblings {
           </item>
           <item>
            <widget class="QToolButton" name="f_menu">
+            <property name="maximumSize">
+             <size>
+              <width>27</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true"/>
+            </property>
             <property name="text">
              <string>...</string>
             </property>
@@ -1677,6 +820,14 @@ QTreeView::branch:open:has-children:!has-siblings {
             <height>16777215</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QTreeView
+{
+	
+	background-color: rgb(91, 91, 91);
+	color:white;
+}</string>
+          </property>
           <property name="editTriggers">
            <set>QAbstractItemView::NoEditTriggers</set>
           </property>
@@ -1696,6 +847,12 @@ QTreeView::branch:open:has-children:!has-siblings {
             <height>30</height>
            </size>
           </property>
+          <property name="styleSheet">
+           <string notr="true">QFrame
+{
+	background-color: rgb(226, 226, 226);
+}</string>
+          </property>
           <property name="frameShape">
            <enum>QFrame::StyledPanel</enum>
           </property>
@@ -1714,34 +871,43 @@ QTreeView::branch:open:has-children:!has-siblings {
            </property>
            <item>
             <widget class="QToolButton" name="n_upload">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
              <property name="text">
               <string>...</string>
              </property>
              <property name="icon">
-              <iconset theme="document">
-               <normaloff>.</normaloff>.</iconset>
+              <iconset resource="../resources/myqrc.qrc">
+               <normaloff>:/images/ico/n-upload.png</normaloff>:/images/ico/n-upload.png</iconset>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QToolButton" name="n_delete">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
              <property name="text">
               <string>...</string>
              </property>
              <property name="icon">
-              <iconset theme="edit-delete">
-               <normaloff>.</normaloff>.</iconset>
+              <iconset theme="edit-delete" resource="../resources/myqrc.qrc">
+               <normaloff>:/images/ico/n-delete.png</normaloff>:/images/ico/n-delete.png</iconset>
              </property>
             </widget>
            </item>
            <item>
             <widget class="QToolButton" name="n_refresh">
+             <property name="styleSheet">
+              <string notr="true"/>
+             </property>
              <property name="text">
               <string>...</string>
              </property>
              <property name="icon">
-              <iconset theme="view-refresh">
-               <normaloff>.</normaloff>.</iconset>
+              <iconset theme="view-refresh" resource="../resources/myqrc.qrc">
+               <normaloff>:/images/ico/n-refresh.png</normaloff>:/images/ico/n-refresh.png</iconset>
              </property>
             </widget>
            </item>
@@ -1767,6 +933,14 @@ QTreeView::branch:open:has-children:!has-siblings {
             <width>404</width>
             <height>16777215</height>
            </size>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">QListView
+{
+	
+	background-color: rgb(91, 91, 91);
+	color:white;
+}</string>
           </property>
           <property name="editTriggers">
            <set>QAbstractItemView::NoEditTriggers</set>
@@ -1803,8 +977,8 @@ QTreeView::branch:open:has-children:!has-siblings {
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>883</width>
-     <height>25</height>
+     <width>894</width>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
@@ -1818,9 +992,9 @@ QTreeView::branch:open:has-children:!has-siblings {
      <addaction name="actionlatex"/>
      <addaction name="actionpdf"/>
     </widget>
+    <addaction name="actionnew"/>
     <addaction name="actionopen"/>
     <addaction name="actionopen_folder"/>
-    <addaction name="actionupload"/>
     <addaction name="actionsave"/>
     <addaction name="menuexport"/>
    </widget>
@@ -1844,7 +1018,11 @@ QTreeView::branch:open:has-children:!has-siblings {
    <addaction name="menuLogin"/>
    <addaction name="menuEdit"/>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QStatusBar" name="statusbar">
+   <property name="styleSheet">
+    <string notr="true">color:white</string>
+   </property>
+  </widget>
   <action name="actionopen">
    <property name="text">
     <string>open</string>
@@ -1908,6 +1086,14 @@ QTreeView::branch:open:has-children:!has-siblings {
   <action name="actionEdit_Document_Source">
    <property name="text">
     <string>Edit Document Source</string>
+   </property>
+  </action>
+  <action name="actionnew">
+   <property name="text">
+    <string>new</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
    </property>
   </action>
  </widget>

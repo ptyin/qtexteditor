@@ -12,9 +12,12 @@
 #include <QtCore/QProcess>
 #include <QtPrintSupport/QPrinter>
 #include <QList>
+#include <QDesktopWidget>
 #include "editor.h"
 #include "ui_editor.h"
 #include "AccountManager.h"
+#include "login.h"
+#include "register.h"
 
 Editor::Editor(AccountManager manager_, QWidget *parent):
         manager(manager_),
@@ -23,6 +26,17 @@ Editor::Editor(AccountManager manager_, QWidget *parent):
 {
     manager = manager_;
     ui->setupUi(this);
+    QFile file(":/images/qss/black.qss"); //black white QSS 文件路径
+    file.open(QIODevice::ReadOnly | QIODevice::Text);
+    QString qss(file.readAll());
+    setStyleSheet(qss);
+    file.close();
+
+    l_username = new QLabel(manager.getUsername());
+    ui->statusbar->addPermanentWidget(l_username);
+    l_server = new QLabel(manager.getServer());
+    ui->statusbar->addPermanentWidget(l_server);
+
     connect(&manager, SIGNAL(return_files_list(QList<QString> *)), this, SLOT(showRemoteFiles(QList<QString> *)));
     connect(&manager, SIGNAL(return_content(QString)), this, SLOT(showFile(QString)));
     connect(ui->remote_file_view, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(remote_file_view_doublclicked(const QModelIndex &)));
@@ -123,26 +137,31 @@ Editor::Editor(AccountManager manager_, QWidget *parent):
     connect(ui->f_underline, SIGNAL(clicked()), this, SLOT(textUnderline()));
     connect(ui->f_strikeout, SIGNAL(clicked()), this, SLOT(textStrikeout()));
 
-    QAction *removeFormat = new QAction(tr("Remove character formatting"), this);
-    removeFormat->setShortcut(QKeySequence("CTRL+M"));
-    connect(removeFormat, SIGNAL(triggered()), this, SLOT(textRemoveFormat()));
-    ui->textEdit->addAction(removeFormat);
+//    QAction *removeFormat = new QAction(tr("Remove character formatting"), this);
+//    removeFormat->setShortcut(QKeySequence("CTRL+M"));
+    ui->actionRemove_Character_Formatting->setShortcut(QKeySequence("CTRL+M"));
+//    connect(removeFormat, SIGNAL(triggered()), this, SLOT(textRemoveFormat()));
+    connect(ui->actionRemove_Character_Formatting, SIGNAL(triggered()), this, SLOT(textRemoveFormat()));
+    ui->textEdit->addAction(ui->actionRemove_Character_Formatting);
 
-    QAction *removeAllFormat = new QAction(tr("Remove all formatting"), this);
-    connect(removeAllFormat, SIGNAL(triggered()), this, SLOT(textRemoveAllFormat()));
-    ui->textEdit->addAction(removeAllFormat);
+//    QAction *removeAllFormat = new QAction(tr("Remove all formatting"), this);
+//    connect(removeAllFormat, SIGNAL(triggered()), this, SLOT(textRemoveAllFormat()));
+    connect(ui->actionRemove_All_Formating, SIGNAL(triggered()), this, SLOT(textRemoveAllFormat()));
+    ui->textEdit->addAction(ui->actionRemove_All_Formating);
 
-    QAction *textsource = new QAction(tr("Edit document source"), this);
-    textsource->setShortcut(QKeySequence("CTRL+O"));
-    connect(textsource, SIGNAL(triggered()), this, SLOT(textSource()));
-    ui->textEdit->addAction(textsource);
+//    QAction *textsource = new QAction(tr("Edit document source"), this);
+//    textsource->setShortcut(QKeySequence("CTRL+O"));
+    ui->actionEdit_Document_Source->setShortcut(QKeySequence("CTRL+O"));
+//    connect(textsource, SIGNAL(triggered()), this, SLOT(textSource()));
+    connect(ui->actionEdit_Document_Source, SIGNAL(triggered()), this, SLOT(textSource()));
+    ui->textEdit->addAction(ui->actionEdit_Document_Source);
 
-    QMenu *menu = new QMenu(this);
-    menu->addAction(removeAllFormat);
-    menu->addAction(removeFormat);
-    menu->addAction(textsource);
-    ui->f_menu->setMenu(menu);
-    ui->f_menu->setPopupMode(QToolButton::InstantPopup);
+//    QMenu *menu = new QMenu(this);
+//    menu->addAction(removeAllFormat);
+//    menu->addAction(removeFormat);
+//    menu->addAction(textsource);
+//    ui->f_menu->setMenu(menu);
+//    ui->f_menu->setPopupMode(QToolButton::InstantPopup);
 
     // lists
 
@@ -202,6 +221,7 @@ void Editor::showLocalFileSystem()
     ui->local_filesystem_view->header()->setSortIndicatorShown(true);
     ui->local_filesystem_view->header()->setSectionsClickable(true);
     ui->local_filesystem_view->header()->setSectionResizeMode(QHeaderView::ResizeToContents);
+    ui->local_filesystem_view->header()->setStretchLastSection(true);
 
 //    QModelIndex index = dirModel->index(QDir::currentPath());
 //    ui->local_filesystem_view->expand(index);
@@ -242,7 +262,7 @@ void Editor::textRemoveFormat()
     fmt.setFontUnderline(false);
     fmt.setFontStrikeOut(false);
     fmt.setFontItalic(false);
-    fmt.setFontPointSize(9);
+    fmt.setFontPointSize(QApplication::font().pointSize());
 //  fmt.setFontFamily     ("Helvetica");
 //  fmt.setFontStyleHint  (QFont::SansSerif);
 //  fmt.setFontFixedPitch (true);
@@ -720,6 +740,12 @@ void Editor::insertImage()
 }
 
 
+void Editor::on_actionnew_triggered()
+{
+    ui->textEdit->clear();
+    recentFileName = "untitled";
+}
+
 void Editor::on_actionopen_triggered()
 {
     QFileDialog fileDialog(this);
@@ -727,6 +753,7 @@ void Editor::on_actionopen_triggered()
     QFile file(fileDialog.getOpenFileName(this, "打开文件", "", "html文件(*.html);;"));
     if (file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
+        recentFileName = file.fileName();
         setHtml(file.readAll());
         file.close();
     }
@@ -744,6 +771,7 @@ void Editor::on_actionsave_triggered()
     QFile file(fileDialog.getSaveFileName(this, "保存文件", "", "html文件(*.html);;"));
     if (file.open(QIODevice::WriteOnly | QIODevice::Text))
     {
+        recentFileName = file.fileName();
         QTextStream textStream(&file);
         textStream << toHtml();
     }
@@ -775,6 +803,27 @@ void Editor::on_actionpdf_triggered()
     document()->print(&printer);
 }
 
+void Editor::on_actionlogin_triggered()
+{
+    Login *login = new Login(nullptr, &manager, this);
+    login->move((QApplication::desktop()->width() - login->width()) / 2, (QApplication::desktop()->height() - login->height()) / 2);
+    login->showAgain();
+}
+
+void Editor::on_actionregister_triggered()
+{
+    Register *aRegister = new Register(manager, this);
+    aRegister->exec();
+}
+
+void Editor::on_actionlogout_triggered()
+{
+    Login *w = new Login(nullptr);
+    w->move((QApplication::desktop()->width() - w->width()) / 2, (QApplication::desktop()->height() - w->height()) / 2);
+    w->show();
+    close();
+}
+
 void Editor::on_n_refresh_clicked()
 {
     manager.getFiles();
@@ -789,8 +838,10 @@ void Editor::on_n_delete_clicked()
 
 void Editor::on_n_upload_clicked()
 {
-    QString fileName = QInputDialog::getText(this, "输入文件名", "File Name:", QLineEdit::Normal);
-    manager.uploadFile(fileName, toHtml());
+    QString fileName = QInputDialog::getText(this, "input file name", "File Name:", QLineEdit::Normal, recentFileName);
+    recentFileName = fileName;
+    if(!fileName.isEmpty())
+        manager.uploadFile(fileName, toHtml());
 }
 
 void Editor::local_filesystem_view_doublclicked(const QModelIndex &modelIndex)
@@ -799,6 +850,7 @@ void Editor::local_filesystem_view_doublclicked(const QModelIndex &modelIndex)
     qDebug() << file;
     if (file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
+        recentFileName = dirModel->fileName(modelIndex);
         setHtml(file.readAll());
         file.close();
     }
@@ -812,4 +864,7 @@ void Editor::remote_file_view_doublclicked(const QModelIndex & modelIndex)
 Editor::~Editor()
 {
     delete ui;
+    delete l_username;
+    delete l_server;
+    manager.deleteLater();
 }

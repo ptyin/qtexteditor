@@ -8,7 +8,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    QTextCodec::setCodecForLocale(QTextCodec::codecForLocale());
+//    QTextCodec::setCodecForLocale(QTextCodec::codecForLocale());
 
 //    Login::setStyle("black.qss");
     Login w(nullptr);

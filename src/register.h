@@ -18,11 +18,9 @@ class Register : public QDialog
 Q_OBJECT
 
 public:
-    explicit Register(QWidget *parent = 0);
+    explicit Register(const AccountManager& manager_, QWidget *parent);
 
     ~Register();
-
-    void setParent(Login *dialog);
 
     QSqlDatabase database;//database为注册的数据库名称
     bool tableFlag;
@@ -35,8 +33,7 @@ private slots:
 
 private:
     Ui::Register *ui;
-
-    Login *pWidget;         //父对象
+    AccountManager manager;
 
 };
 

@@ -41,10 +41,14 @@ public:
     { ui->textEdit->setTextCursor(cursor); }
 
     void setUser(QString username)
-    { ui->statusbar->addPermanentWidget(new QLabel("username:" + username)); };
+    {
+        l_username->setText(username);
+    };
 
     void setServer(QString address)
-    { ui->statusbar->addPermanentWidget(new QLabel("server:" + address)); };
+    {
+        l_server->setText(address);
+    };
 
 public slots:
 
@@ -146,6 +150,8 @@ protected:
     QPointer<QTextList> m_lastBlockList;
 private slots:
 
+    void on_actionnew_triggered();
+
     void on_actionopen_triggered();
 
     void on_actionopen_folder_triggered();
@@ -155,6 +161,12 @@ private slots:
     void on_actionlatex_triggered();
 
     void on_actionpdf_triggered();
+
+    void on_actionlogin_triggered();
+
+    void on_actionregister_triggered();
+
+    void on_actionlogout_triggered();
 
     void on_n_refresh_clicked();
 
@@ -176,6 +188,9 @@ private:
     QStringListModel *listModel;
     AccountManager manager;
     QList<QString> remoteFileList;
+    QString recentFileName;
+    QLabel *l_username;
+    QLabel *l_server;
 
 
     void showLocalFileSystem();

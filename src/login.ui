@@ -31,8 +31,8 @@
   <widget class="QPushButton" name="btn_regist">
    <property name="geometry">
     <rect>
-     <x>321</x>
-     <y>199</y>
+     <x>330</x>
+     <y>200</y>
      <width>91</width>
      <height>23</height>
     </rect>
@@ -46,7 +46,7 @@
     <string notr="true">color: rgb(11, 163, 219);</string>
    </property>
    <property name="text">
-    <string>注册帐号</string>
+    <string>Register</string>
    </property>
    <property name="flat">
     <bool>true</bool>
@@ -74,30 +74,6 @@
    </property>
    <property name="styleSheet">
     <string notr="true"/>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="btn_edit_pwd">
-   <property name="geometry">
-    <rect>
-     <x>321</x>
-     <y>229</y>
-     <width>91</width>
-     <height>23</height>
-    </rect>
-   </property>
-   <property name="font">
-    <font>
-     <pointsize>9</pointsize>
-    </font>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">color: rgb(11, 163, 219);</string>
-   </property>
-   <property name="text">
-    <string>找回密码</string>
-   </property>
-   <property name="flat">
-    <bool>true</bool>
    </property>
   </widget>
   <widget class="QComboBox" name="cBox_account">
@@ -154,7 +130,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>登录</string>
+    <string>login</string>
    </property>
    <property name="shortcut">
     <string>Return</string>
@@ -178,12 +154,12 @@
     <rect>
      <x>278</x>
      <y>261</y>
-     <width>75</width>
+     <width>81</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>自动登录</string>
+    <string>Auto Login</string>
    </property>
   </widget>
   <widget class="QCheckBox" name="checkBox_rPasswd">
@@ -204,12 +180,12 @@
     <rect>
      <x>152</x>
      <y>261</y>
-     <width>75</width>
+     <width>91</width>
      <height>16</height>
     </rect>
    </property>
    <property name="text">
-    <string>记住密码</string>
+    <string>Remember Me</string>
    </property>
   </widget>
   <widget class="QComboBox" name="cBox_server">
@@ -262,7 +238,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>匿名登录</string>
+    <string>anonymous</string>
    </property>
   </widget>
  </widget>
@@ -271,11 +247,10 @@
   <tabstop>cBox_server</tabstop>
   <tabstop>cBox_account</tabstop>
   <tabstop>lineEdit_passwd</tabstop>
-  <tabstop>btn_login</tabstop>
   <tabstop>checkBox_rPasswd</tabstop>
-  <tabstop>checkBox_autoLogin</tabstop>
+  <tabstop>btn_login</tabstop>
   <tabstop>btn_annonymous</tabstop>
-  <tabstop>btn_edit_pwd</tabstop>
+  <tabstop>checkBox_autoLogin</tabstop>
   <tabstop>btn_regist</tabstop>
  </tabstops>
  <resources/>

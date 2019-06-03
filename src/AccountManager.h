@@ -35,6 +35,10 @@ public:
     void getFiles();
     void deleteFile(QString filename);
 
+    const QString &getUsername() const;
+
+    const QString &getServer() const;
+
 signals:
     void login_success();
     void return_content(QString content);

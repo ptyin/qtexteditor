@@ -261,5 +261,15 @@ AccountManager::AccountManager(QWidget *parent):manager(parent)
 
 }
 
+const QString &AccountManager::getUsername() const
+{
+    return username;
+}
+
+const QString &AccountManager::getServer() const
+{
+    return server;
+}
+
 AccountManager::~AccountManager()
 = default;

@@ -13,6 +13,116 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">
+/* === Shared === */
+QLabel, QPushButton, QDialog
+{
+    background-color: #222222;
+    color: #BBBBBB;
+    font-family: &quot;Segoe UI&quot;;
+}
+
+/* === QWidget === */
+QWidget:window {
+    background: #222222;
+    color: #BBBBBB;
+    font-family: &quot;Segoe UI&quot;;
+}
+
+/* === QToolTip === */
+QToolTip {
+    background-color: #000000;
+    border: 2px solid #333333;
+    color: yellow;
+}
+
+/* === QPushButton === */
+QPushButton {
+    border: 1px solid #333333;
+    padding: 4px;
+    min-width: 65px;
+    min-height: 12px;
+}
+
+QPushButton:hover {
+    background-color: #333333;
+    border-color: #444444;
+}
+
+QPushButton:pressed {
+    background-color: #111111;
+    border-color: #333333;
+    color: yellow;
+}
+
+QPushButton:disabled {
+    color: #333333;
+}
+
+/* =================== */
+QLineEdit{
+    background-color: black;
+    color: #BBBBBB;
+    border: 1px solid #333333;
+}
+/* Nice Windows-XP-style password character. */
+QLineEdit[echoMode=&quot;2&quot;] {
+    lineedit-password-character: 9679;
+}
+
+/* We provide a min-width and min-height for push buttons
+   so that they look elegant regardless of the width of the text. */
+QPushButton {
+    background-color: palegoldenrod;
+    border-width: 2px;
+    border-color: darkkhaki;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 3px;
+    min-width: 9ex;
+    min-height: 2.5ex;
+}
+
+QPushButton:hover {
+   background-color: khaki;
+}
+
+/* Increase the padding, so the text is shifted when the button is
+   pressed. */
+QPushButton:pressed {
+    padding-left: 5px;
+    padding-top: 5px;
+    background-color: #d0d67c;
+}
+
+QLabel, QAbstractButton {
+    font: bold;
+}
+
+QLineEdit, QFrame {
+    border-width: 1px;
+    padding: 1px;
+    border-style: solid;
+    border-color: darkkhaki;
+    border-radius: 5px;
+}
+
+/* As mentioned above, eliminate the padding and increase the border. */
+QLineEdit:focus, QFrame:focus {
+    border-width: 3px;
+    padding: 0px;
+}
+
+/* A QLabel is a QFrame  */
+QLabel {
+    border: none;
+    padding: 0;
+    background: none;
+}
+
+</string>
+  </property>
   <widget class="QLabel" name="labelName">
    <property name="geometry">
     <rect>
@@ -23,7 +133,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>用户名</string>
+    <string>username</string>
    </property>
   </widget>
   <widget class="QLabel" name="labelPassword">
@@ -36,7 +146,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>密码</string>
+    <string>password</string>
    </property>
   </widget>
   <widget class="QLabel" name="labelPasswordCheck">
@@ -49,7 +159,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>确认密码</string>
+    <string>confirm</string>
    </property>
   </widget>
   <widget class="QLabel" name="labelEmail">
@@ -62,7 +172,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>邮箱</string>
+    <string>email</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEditName">
@@ -108,14 +218,14 @@
   <widget class="QPushButton" name="registerCheckButton">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>80</x>
      <y>250</y>
-     <width>61</width>
-     <height>23</height>
+     <width>75</width>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
-    <string>注册</string>
+    <string>register</string>
    </property>
   </widget>
   <widget class="QLabel" name="labelServer">
@@ -128,7 +238,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>服务器</string>
+    <string>server</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEditServer">

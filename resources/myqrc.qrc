@@ -37,5 +37,14 @@
         <file>images/ico/editor-redo.png</file>
         <file>images/ico/editor-undo.png</file>
         <file>images/ico/editor-list-bulleted.png</file>
+        <file>images/ico/editor-copy .png</file>
+        <file>images/ico/editor-cut.png</file>
+        <file>images/ico/editor-paste.png</file>
+        <file>images/ico/editor-add-indent.png</file>
+        <file>images/ico/editor-reduce-indent.png</file>
+        <file>images/ico/n-delete.png</file>
+        <file>images/ico/n-refresh.png</file>
+        <file>images/ico/n-upload.png</file>
+        <file>images/ico/Qt-TextEditor.ico</file>
     </qresource>
 </RCC>

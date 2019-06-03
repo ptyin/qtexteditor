@@ -11,6 +11,7 @@
 #include <QAction>
 #include <QActionGroup>
 #include "AccountManager.h"
+#include "editor.h"
 
 
 namespace Ui
@@ -24,6 +25,8 @@ Q_OBJECT
 
 public:
     explicit Login(QWidget *parent);
+
+    Login(QWidget *parent, AccountManager *manager_ptr, Editor *editor);
 
     ~Login();
 
@@ -43,6 +46,8 @@ public:
 
     void setStyle(const QString &style);//设置style
 
+    void showAgain();
+
 protected:
     void mousePressEvent(QMouseEvent *e);
 
@@ -57,6 +62,8 @@ signals:
 private slots:
 
     void login_success();
+
+    void login_success_without_entering();
 
     void on_btn_annonymous_clicked();
 
@@ -78,7 +85,7 @@ private slots:
 
     void on_cBox_account_activated(int index);
 
-    void on_btn_edit_pwd_clicked();
+//    void on_btn_edit_pwd_clicked();
 
     void on_cBox_account_currentIndexChanged(int index);
 
@@ -116,7 +123,8 @@ private:
     QActionGroup *actGrp;
     QList<bool> is_remembered;
 
-    AccountManager manager;
+    AccountManager *manager;
+    Editor *parentEditor;
 public:
     UserInfoStu user_info_stu;
     QSqlDatabase db;
