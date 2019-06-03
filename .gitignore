@@ -2,3 +2,4 @@
 cmake-build-debug
 cmake-build-release
 QtLaTeX.pro.user
+CMakeLists.txt
