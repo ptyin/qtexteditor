@@ -8,16 +8,18 @@
 #include <QtSql/QSqlQuery>
 #include "login.h"
 
-namespace Ui {
-class Register;
+namespace Ui
+{
+    class Register;
 }
 
 class Register : public QDialog
 {
-    Q_OBJECT
+Q_OBJECT
 
 public:
     explicit Register(QWidget *parent = 0);
+
     ~Register();
 
     void setParent(Login *dialog);
@@ -27,7 +29,8 @@ public:
     int sql_max_id;
 
 private slots:
-     void on_registerCheckButton_clicked();
+
+    void on_registerCheckButton_clicked();
 //     void receivedb(QSqlDatabase db);
 
 private:

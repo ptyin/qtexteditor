@@ -2,8 +2,8 @@
 #include "ui_exam.h"
 
 Exam::Exam(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::Exam)
+        QMainWindow(parent),
+        ui(new Ui::Exam)
 {
     ui->setupUi(this);
 

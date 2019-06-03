@@ -6,52 +6,142 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>883</width>
+    <height>628</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>Editor</string>
   </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QWidget" name="widget" native="true">
-    <property name="geometry">
-     <rect>
-      <x>0</x>
-      <y>0</y>
-      <width>801</width>
-      <height>80</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(255, 255, 255);</string>
-    </property>
-   </widget>
-  </widget>
+  <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
-     <height>26</height>
+     <width>883</width>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
     <property name="title">
-     <string>文件</string>
+     <string>File</string>
     </property>
+    <widget class="QMenu" name="menuexport">
+     <property name="title">
+      <string>export</string>
+     </property>
+     <addaction name="actionlatex"/>
+     <addaction name="actionpdf"/>
+    </widget>
+    <addaction name="actionopen"/>
+    <addaction name="actionopen_folder"/>
+    <addaction name="actionupload"/>
+    <addaction name="actionsave"/>
+    <addaction name="menuexport"/>
    </widget>
-   <widget class="QMenu" name="menu">
+   <widget class="QMenu" name="menuLogin">
     <property name="title">
-     <string>编辑</string>
+     <string>Login</string>
     </property>
+    <addaction name="actionlogin"/>
+    <addaction name="actionregister"/>
+    <addaction name="actionlogout"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>Edit</string>
+    </property>
+    <addaction name="actionRemove_All_Formating"/>
+    <addaction name="actionRemove_Character_Formatting"/>
+    <addaction name="actionEdit_Document_Source"/>
    </widget>
    <addaction name="menuFile"/>
-   <addaction name="menu"/>
+   <addaction name="menuLogin"/>
+   <addaction name="menuEdit"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionopen">
+   <property name="text">
+    <string>open</string>
+   </property>
+  </action>
+  <action name="actionsave">
+   <property name="text">
+    <string>save</string>
+   </property>
+  </action>
+  <action name="actionopen_folder">
+   <property name="text">
+    <string>open folder</string>
+   </property>
+  </action>
+  <action name="actionupload">
+   <property name="text">
+    <string>upload</string>
+   </property>
+  </action>
+  <action name="actionexport_to_pdf">
+   <property name="text">
+    <string>export to pdf</string>
+   </property>
+  </action>
+  <action name="actionlatex">
+   <property name="text">
+    <string>latex</string>
+   </property>
+  </action>
+  <action name="actionpdf">
+   <property name="text">
+    <string>pdf</string>
+   </property>
+  </action>
+  <action name="actionlogin">
+   <property name="text">
+    <string>login</string>
+   </property>
+  </action>
+  <action name="actionregister">
+   <property name="text">
+    <string>register</string>
+   </property>
+  </action>
+  <action name="actionlogout">
+   <property name="text">
+    <string>logout</string>
+   </property>
+  </action>
+  <action name="actionRemove_All_Formating">
+   <property name="text">
+    <string>Remove All Formating</string>
+   </property>
+  </action>
+  <action name="actionRemove_Character_Formatting">
+   <property name="text">
+    <string>Remove Character Formatting</string>
+   </property>
+  </action>
+  <action name="actionEdit_Document_Source">
+   <property name="text">
+    <string>Edit Document Source</string>
+   </property>
+  </action>
  </widget>
- <resources/>
+ <customwidgets>
+  <customwidget>
+   <class>MTextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>src/mtextedit.h</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../resources/myqrc.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -156,6 +156,9 @@
    <property name="text">
     <string>登录</string>
    </property>
+   <property name="shortcut">
+    <string>Return</string>
+   </property>
   </widget>
   <widget class="QCheckBox" name="checkBox_autoLogin">
    <property name="geometry">
@@ -212,8 +215,8 @@
   <widget class="QComboBox" name="cBox_server">
    <property name="geometry">
     <rect>
-     <x>0</x>
-     <y>50</y>
+     <x>20</x>
+     <y>290</y>
      <width>121</width>
      <height>29</height>
     </rect>
@@ -230,14 +233,14 @@
   <widget class="QLabel" name="label_3">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>30</y>
+     <x>40</x>
+     <y>270</y>
      <width>62</width>
      <height>20</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color: rgb(255, 255, 255);</string>
+    <string notr="true">color: rgb(46, 52, 54);</string>
    </property>
    <property name="text">
     <string>Server</string>
@@ -249,8 +252,32 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
+  <widget class="QPushButton" name="btn_annonymous">
+   <property name="geometry">
+    <rect>
+     <x>310</x>
+     <y>290</y>
+     <width>100</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>匿名登录</string>
+   </property>
+  </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>cBox_server</tabstop>
+  <tabstop>cBox_account</tabstop>
+  <tabstop>lineEdit_passwd</tabstop>
+  <tabstop>btn_login</tabstop>
+  <tabstop>checkBox_rPasswd</tabstop>
+  <tabstop>checkBox_autoLogin</tabstop>
+  <tabstop>btn_annonymous</tabstop>
+  <tabstop>btn_edit_pwd</tabstop>
+  <tabstop>btn_regist</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

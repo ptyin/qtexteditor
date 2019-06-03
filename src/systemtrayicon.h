@@ -10,7 +10,7 @@
 
 class SystemTrayIcon : public QWidget
 {
-    Q_OBJECT
+Q_OBJECT
 public:
     //explicit SystemTrayIcon(QWidget *parent = 0);
     explicit SystemTrayIcon(QStringList strList, QIcon icon, QWidget *parent = 0);
@@ -22,6 +22,7 @@ public:
 
 
 signals:
+
     void signal_lang_refresh();
 
 public slots:
@@ -33,6 +34,7 @@ public slots:
 public:
     QAction *actFixed;                  //固定位置
     QActionGroup *acrLangGrp;
+
     void refresh();
 
 private:
