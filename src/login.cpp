@@ -299,7 +299,7 @@ void Login::set_user_img(bool isSandom, int index_img)
     QPixmap img_pic = QPixmap::fromImage(user_img.scaled(ui->label_user_img->width(),
                                                          ui->label_user_img->height()));
     ui->label_user_img->setPixmap(img_pic);
-    qDebug() << "             [leo]user_img width heigh:" << ui->label_user_img->width()
+    qDebug() << "             [leo]user_img width height:" << ui->label_user_img->width()
              << " " << ui->label_user_img->height();
 }
 
@@ -389,6 +389,10 @@ void Login::on_btn_login_clicked()
         manager.setPassword(user_info_stu.passwd);
         manager.setServer(user_info_stu.server);
         manager.login();
+//        manager.setUsername("lalal");
+//        manager.setPassword("peter123");
+//        manager.setServer("www.peter-sia.top:2333");
+//        manager.login();
     }
 }
 

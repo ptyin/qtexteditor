@@ -712,9 +712,9 @@ void Editor::insertImage()
                                                 tr("image (*.jpg *.gif *.png *.bmp);; JPEG (*.jpg);; GIF (*.gif);; PNG (*.png);; BMP (*.bmp);; All (*)"));
     if(file!="")
     {
-//        QImage image = QImageReader(file).read();
-//        ui->textEdit->dropImage(image, QFileInfo(file).suffix().toUpper().toLocal8Bit().data());
-        ui->textEdit->dropImage(file);
+        QImage image = QImageReader(file).read();
+        ui->textEdit->dropImage(image, QFileInfo(file).suffix().toUpper().toLocal8Bit().data());
+//        ui->textEdit->dropImage(file);
     }
 
 }

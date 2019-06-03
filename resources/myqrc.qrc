@@ -23,5 +23,19 @@
         <file>images/ico/order-list.png</file>
         <file>images/ico/split-page.png</file>
         <file>images/ico/split-paragraph.png</file>
+        <file>images/ico/editor-align-center.png</file>
+        <file>images/ico/editor-align-left.png</file>
+        <file>images/ico/editor-align-right.png</file>
+        <file>images/ico/editor-bold.png</file>
+        <file>images/ico/editor-hr.png</file>
+        <file>images/ico/editor-image.png</file>
+        <file>images/ico/editor-italic.png</file>
+        <file>images/ico/editor-link.png</file>
+        <file>images/ico/editor-list-numbers.png</file>
+        <file>images/ico/editor-strikethrough.png</file>
+        <file>images/ico/editor-underline.png</file>
+        <file>images/ico/editor-redo.png</file>
+        <file>images/ico/editor-undo.png</file>
+        <file>images/ico/editor-list-bulleted.png</file>
     </qresource>
 </RCC>
