@@ -37,6 +37,9 @@ Editor::Editor(AccountManager manager_, QWidget *parent):
     l_server = new QLabel(manager.getServer());
     ui->statusbar->addPermanentWidget(l_server);
 
+    fileListTimer = new QTimer(this);
+
+    connect(fileListTimer, SIGNAL(timeout()), this, SLOT(on_n_refresh_clicked()));
     connect(&manager, SIGNAL(return_files_list(QList<QString> *)), this, SLOT(showRemoteFiles(QList<QString> *)));
     connect(&manager, SIGNAL(return_content(QString)), this, SLOT(showFile(QString)));
     connect(ui->remote_file_view, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(remote_file_view_doublclicked(const QModelIndex &)));
@@ -207,6 +210,8 @@ Editor::Editor(AccountManager manager_, QWidget *parent):
 
     // images
     connect(ui->f_image, SIGNAL(clicked()), this, SLOT(insertImage()));
+    shotsCount=0;
+    fileListTimer->start(1000);
 }
 
 void Editor::showLocalFileSystem()
@@ -235,6 +240,7 @@ void Editor::showRemoteFiles(QList<QString> *stringList)
     listModel = new QStringListModel(this);
     ui->remote_file_view->setModel(listModel);
     listModel->setStringList(*stringList);
+    fileListTimer->stop();
     delete stringList;
 }
 
@@ -812,7 +818,7 @@ void Editor::on_actionlogin_triggered()
 
 void Editor::on_actionregister_triggered()
 {
-    Register *aRegister = new Register(manager, this);
+    Register *aRegister = new Register(&manager, this);
     aRegister->exec();
 }
 
@@ -826,7 +832,12 @@ void Editor::on_actionlogout_triggered()
 
 void Editor::on_n_refresh_clicked()
 {
+    if(shotsCount>3)
+    {
+        return;
+    }
     manager.getFiles();
+    shotsCount++;
 }
 
 void Editor::on_n_delete_clicked()
@@ -834,6 +845,8 @@ void Editor::on_n_delete_clicked()
     QModelIndex modelIndex = ui->remote_file_view->currentIndex();
     QString filename = ui->remote_file_view->model()->itemData(modelIndex).value(0).toString();
     manager.deleteFile(filename);
+    shotsCount=0;
+    fileListTimer->start(1000);
 }
 
 void Editor::on_n_upload_clicked()
@@ -841,7 +854,11 @@ void Editor::on_n_upload_clicked()
     QString fileName = QInputDialog::getText(this, "input file name", "File Name:", QLineEdit::Normal, recentFileName);
     recentFileName = fileName;
     if(!fileName.isEmpty())
+    {
         manager.uploadFile(fileName, toHtml());
+        shotsCount=0;
+        fileListTimer->start(1000);
+    }
 }
 
 void Editor::local_filesystem_view_doublclicked(const QModelIndex &modelIndex)
@@ -866,5 +883,8 @@ Editor::~Editor()
     delete ui;
     delete l_username;
     delete l_server;
+    delete fileListTimer;
+    delete listModel;
+    delete dirModel;
     manager.deleteLater();
 }

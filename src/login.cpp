@@ -1,7 +1,6 @@
 #include "login.h"
 #include "ui_login.h"
 
-#include "exam.h"
 #include "passwdedit.h"
 #include "register.h"
 #include "systemtrayicon.h"
@@ -367,7 +366,7 @@ void Login::on_btn_login_clicked()
         ui->lineEdit_passwd->text().isEmpty() ||
         ui->cBox_server->currentText().isEmpty())
     {
-        QMessageBox::warning(this, tr("警告"), tr("请同时输入服务器地址和用户名密码！"));
+        QMessageBox::warning(this, tr("error"), tr("Username, Password And Server Are Needed！"));
     } else
     {
         //TODO
@@ -484,7 +483,7 @@ void Login::login_success_without_entering()
 void Login::on_btn_regist_clicked()
 {
     //TODO
-    Register r(*manager, this);
+    Register r(manager, this);
     //transmitdb(database);
     r.exec();    //注册页面r，仅仅获取信息.
 

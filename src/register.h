@@ -18,7 +18,7 @@ class Register : public QDialog
 Q_OBJECT
 
 public:
-    explicit Register(const AccountManager& manager_, QWidget *parent);
+    explicit Register(AccountManager *manager_, QWidget *parent);
 
     ~Register();
 
@@ -33,7 +33,7 @@ private slots:
 
 private:
     Ui::Register *ui;
-    AccountManager manager;
+    AccountManager *manager;
 
 };
 

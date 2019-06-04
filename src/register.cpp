@@ -2,8 +2,7 @@
 #include "ui_register.h"
 #include <QDebug>
 
-Register::Register(const AccountManager& manager_, QWidget *parent= nullptr) :
-        manager(manager_),
+Register::Register(AccountManager* manager_, QWidget *parent= nullptr) :
         QDialog(parent),
         ui(new Ui::Register)
 {
@@ -13,6 +12,7 @@ Register::Register(const AccountManager& manager_, QWidget *parent= nullptr) :
     ui->lineEditPasswordCheck->setEchoMode(QLineEdit::Password);
     ui->lineEditServer->setText("www.peter-sia.top:2333");
     setWindowTitle(tr("register"));
+    manager = manager_;
 
     //connect((Login *)parent,SIGNAL(transmitdb(QSqlDatabase)),this,SLOT(receivedb(QSqlDatabase)));
 
@@ -49,10 +49,10 @@ void Register::on_registerCheckButton_clicked()
             QMessageBox::warning(this, "error", "passwords you type are not the same!");
         } else
         {
-            manager.setUsername(userName);
-            manager.setPassword(passwd);
-            manager.setServer(server);
-            manager.registerUser(email);
+            manager->setUsername(userName);
+            manager->setPassword(passwd);
+            manager->setServer(server);
+            manager->registerUser(email);
             this->close();
         }
 }

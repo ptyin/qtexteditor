@@ -191,7 +191,8 @@ private:
     QString recentFileName;
     QLabel *l_username;
     QLabel *l_server;
-
+    QTimer *fileListTimer;
+    int shotsCount;
 
     void showLocalFileSystem();
 
