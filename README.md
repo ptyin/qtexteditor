@@ -5,37 +5,41 @@ A Qt rich text editor, used for online or offline edit text. Support for exporti
 
 ## Fuction
 
-	- Function
-		- User Administration 
-			- Login
-			- Register
-		- Rich Text Function
-			- format
-			- font style
-			- insert link
-			- insert image
-			- other common-use operation
-		- File Fuction
-			- save as html
-			- export to latex
-			- export to pdf
-			- upload file to remote server
-			- get file from remote server
-			- delete file stored in remote server
-
 ![](demo/Qt-TextEditor.png)
+
+- Function
+    - User Administration
+        - Login
+        - Register
+    - Rich Text Function
+        - format
+        - font style
+        - insert link
+        - insert image
+        - other common-use operation
+    - File Fuction
+        - save as html
+        - export to latex
+        - export to pdf
+        - upload file to remote server
+        - get file from remote server
+        - delete file stored in remote server
+
+## Login Module
+
+![](demo/登陆模块.png)
 
 ## Usage
 
-	- First Sign Up for An Account(press register button and then )
-	- Check Your Email to Activate Your Account
-	- Sign in with a server address(default server:www.peter-sia.top:2333)
+- First Sign Up for An Account(press register button and then )
+- Check Your Email to Activate Your Account
+- Sign in with a server address(default server:www.peter-sia.top:2333)
 
 ## For Developer
 
-	- Use Qt embeded SQLite to store username and password which you have typed before
-	- Use Qt Network to communicate with remote server
-	- You can deploy your own server to your local enviroment or production environment, deploy your server according to [Server Project]("https://github.com/PTYin/Qt-TextEdit-Server")
+- Use Qt embeded SQLite to store username and password which you have typed before
+- Use Qt Network to communicate with remote server
+- You can deploy your own server to your local enviroment or production environment, deploy your server according to [Server Project]("https://github.com/PTYin/Qt-TextEdit-Server")
 
 ### Support Cmake Project instead of QMake Project
 
