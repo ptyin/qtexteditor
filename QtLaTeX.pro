@@ -17,7 +17,6 @@ RC_FILE = myapp.rc
 
 SOURCES += src/main.cpp\
         src/login.cpp \
-    src/passwdedit.cpp \
     src/register.cpp \
     src/systemtrayicon.cpp \
     src/editor.cpp \
@@ -25,7 +24,6 @@ SOURCES += src/main.cpp\
     src/AccountManager.cpp
 
 HEADERS  += src/login.h \
-    src/passwdedit.h \
     src/register.h \
     src/systemtrayicon.h \
     src/editor.h \
@@ -33,7 +31,6 @@ HEADERS  += src/login.h \
     src/AccountManager.h
 
 FORMS    += src/login.ui \
-    src/passwdedit.ui \
     src/register.ui \
     src/editor.ui
 

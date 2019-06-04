@@ -1,7 +1,6 @@
 #include "login.h"
 #include "ui_login.h"
 
-#include "passwdedit.h"
 #include "register.h"
 #include "systemtrayicon.h"
 #include "editor.h"
