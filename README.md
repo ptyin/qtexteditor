@@ -29,6 +29,7 @@ A Qt rich text editor, used for online or offline edit text. Support for exporti
 
 ## Login Module
 
+![](demo/login.png)
 ![](demo/login-module.png)
 
 ## Usage
