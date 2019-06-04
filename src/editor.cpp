@@ -42,8 +42,8 @@ Editor::Editor(AccountManager manager_, QWidget *parent):
     connect(fileListTimer, SIGNAL(timeout()), this, SLOT(on_n_refresh_clicked()));
     connect(&manager, SIGNAL(return_files_list(QList<QString> *)), this, SLOT(showRemoteFiles(QList<QString> *)));
     connect(&manager, SIGNAL(return_content(QString)), this, SLOT(showFile(QString)));
-    connect(ui->remote_file_view, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(remote_file_view_doublclicked(const QModelIndex &)));
-    connect(ui->local_filesystem_view, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(local_filesystem_view_doublclicked(const QModelIndex &)));
+    connect(ui->remote_file_view, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(remote_file_view_doubleclicked(const QModelIndex &)));
+    connect(ui->local_filesystem_view, SIGNAL(doubleClicked(const QModelIndex &)), this, SLOT(local_filesystem_view_doubleclicked(const QModelIndex &)));
 
 //    connect(ui->actionopen, SIGNAL(triggered()), this, SLOT(on_actionopen_triggered()));
 //    connect(ui->actionopen_folder, SIGNAL(triggered()), this, SLOT(on_actionopen_folder_triggered()));
@@ -861,7 +861,7 @@ void Editor::on_n_upload_clicked()
     }
 }
 
-void Editor::local_filesystem_view_doublclicked(const QModelIndex &modelIndex)
+void Editor::local_filesystem_view_doubleclicked(const QModelIndex &modelIndex)
 {
     QFile file(dirModel->filePath(modelIndex));
     qDebug() << file;
@@ -873,8 +873,9 @@ void Editor::local_filesystem_view_doublclicked(const QModelIndex &modelIndex)
     }
 }
 
-void Editor::remote_file_view_doublclicked(const QModelIndex & modelIndex)
+void Editor::remote_file_view_doubleclicked(const QModelIndex &modelIndex)
 {
+    recentFileName = ui->remote_file_view->model()->itemData(modelIndex).value(0).toString();
     manager.getContent(ui->remote_file_view->model()->itemData(modelIndex).value(0).toString());
 }
 

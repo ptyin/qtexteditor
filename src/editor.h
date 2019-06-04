@@ -174,9 +174,9 @@ private slots:
 
     void on_n_upload_clicked();
 
-    void local_filesystem_view_doublclicked(const QModelIndex &);
+    void local_filesystem_view_doubleclicked(const QModelIndex &modelIndex);
 
-    void remote_file_view_doublclicked(const QModelIndex &);
+    void remote_file_view_doubleclicked(const QModelIndex &modelIndex);
 
     void showRemoteFiles(QList<QString> *stringList);
 
