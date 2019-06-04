@@ -42,7 +42,7 @@ A Qt rich text editor, used for online or offline edit text. Support for exporti
 
 - Use Qt embeded SQLite to store username and password which you have typed before
 - Use Qt Network to communicate with remote server
-- You can deploy your own server to your local enviroment or production environment, deploy your server according to [Server Project]("https://github.com/PTYin/Qt-TextEdit-Server")
+- You can deploy your own server to your local enviroment or production environment, deploy your server according to [Server Project](https://github.com/PTYin/Qt-TextEdit-Server)
 
 ### Support Cmake Project instead of QMake Project
 
