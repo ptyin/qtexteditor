@@ -30,7 +30,7 @@ A Qt rich text editor, used for online or offline edit text. Support for exporti
 
 ## Login Module
 
-![](demo/登陆模块.png)
+![](demo/login-module.png)
 
 ## Usage
 
