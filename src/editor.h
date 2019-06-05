@@ -10,6 +10,7 @@
 #include <QtWidgets/QLabel>
 #include <QtCore/QStringListModel>
 #include <iostream>
+#include <QTimer>
 #include "ui_editor.h"
 #include "AccountManager.h"
 
@@ -23,7 +24,7 @@ class Editor : public QMainWindow
 Q_OBJECT
 
 public:
-    explicit Editor(AccountManager manager_, QWidget *parent = nullptr);
+    explicit Editor(AccountManager manager_, QWidget *parent = nullptr, bool anonymous_ = false);
 
     virtual ~Editor();
 
@@ -50,6 +51,23 @@ public:
     {
         l_server->setText(address);
     };
+
+    void setAnonymous(bool anonymous)
+    {
+        Editor::anonymous = anonymous;
+    }
+
+    QTimer *getFileListTimer() const
+    {
+        return fileListTimer;
+    }
+
+    void updateFileListTimer()
+    {
+        shotsCount=0;
+        if(!anonymous)
+            fileListTimer->start(1000);
+    }
 
 public slots:
 
@@ -193,6 +211,7 @@ private:
     QLabel *l_username;
     QLabel *l_server;
     QTimer *fileListTimer;
+    bool anonymous;
     int shotsCount;
 
     void showLocalFileSystem();

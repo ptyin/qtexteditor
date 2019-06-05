@@ -383,7 +383,10 @@ void Login::on_btn_login_clicked()
 
 void Login::on_btn_annonymous_clicked()
 {
-    Editor *e = new Editor(*manager);
+    manager->setUsername(nullptr);
+    manager->setPassword(nullptr);
+    manager->setServer(nullptr);
+    Editor *e = new Editor(*manager, nullptr, true);
     e->show();
     emit close();
 }
@@ -418,7 +421,7 @@ void Login::login_success()
             query.bindValue(":user", user_info_stu.userName);
             query.exec();
         }
-        Editor *e = new Editor(*manager);
+        Editor *e = new Editor(*manager, nullptr, false);
         e->setUser(user_info_stu.userName);
         e->setServer(ui->cBox_server->currentText());
         e->show();
@@ -461,6 +464,8 @@ void Login::login_success_without_entering()
         QMessageBox::information(this, "success", "login successfully!");
         parentEditor->setUser(manager->getUsername());
         parentEditor->setServer(manager->getServer());
+        parentEditor->setAnonymous(false);
+        parentEditor->updateFileListTimer();
         emit close();
     }
 

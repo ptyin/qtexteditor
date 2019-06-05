@@ -19,12 +19,13 @@
 #include "login.h"
 #include "register.h"
 
-Editor::Editor(AccountManager manager_, QWidget *parent):
+Editor::Editor(AccountManager manager_, QWidget *parent, bool anonymous_):
         manager(manager_),
         QMainWindow(parent),
         ui(new Ui::Editor)
 {
     manager = manager_;
+    anonymous = anonymous_;
     ui->setupUi(this);
     QFile file(":/images/qss/black.qss"); //black white QSS 文件路径
     file.open(QIODevice::ReadOnly | QIODevice::Text);
@@ -210,8 +211,7 @@ Editor::Editor(AccountManager manager_, QWidget *parent):
 
     // images
     connect(ui->f_image, SIGNAL(clicked()), this, SLOT(insertImage()));
-    shotsCount=0;
-    fileListTimer->start(1000);
+    updateFileListTimer();
 }
 
 void Editor::showLocalFileSystem()
@@ -845,8 +845,7 @@ void Editor::on_n_delete_clicked()
     QModelIndex modelIndex = ui->remote_file_view->currentIndex();
     QString filename = ui->remote_file_view->model()->itemData(modelIndex).value(0).toString();
     manager.deleteFile(filename);
-    shotsCount=0;
-    fileListTimer->start(1000);
+    updateFileListTimer();
 }
 
 void Editor::on_n_upload_clicked()
@@ -856,8 +855,7 @@ void Editor::on_n_upload_clicked()
     if(!fileName.isEmpty())
     {
         manager.uploadFile(fileName, toHtml());
-        shotsCount=0;
-        fileListTimer->start(1000);
+        updateFileListTimer();
     }
 }
 
