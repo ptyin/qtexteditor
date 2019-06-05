@@ -9,6 +9,7 @@
 #include <QtCore/QPointer>
 #include <QtWidgets/QLabel>
 #include <QtCore/QStringListModel>
+#include <iostream>
 #include "ui_editor.h"
 #include "AccountManager.h"
 
@@ -180,7 +181,7 @@ private slots:
 
     void showRemoteFiles(QList<QString> *stringList);
 
-    void showFile(QString content){setHtml(content);}
+    void showFile(QString content){ui->textEdit->setHtml(content);std::cout<<content.toStdString();}
 
 private:
     Ui::Editor *ui;
@@ -195,6 +196,7 @@ private:
     int shotsCount;
 
     void showLocalFileSystem();
+
 
 };
 

@@ -47,7 +47,7 @@ void AccountManager::uploadFile(QString filename, QString content)
 //    query.addQueryItem("filename", filename);
 //    query.addQueryItem("content", content);
 //    url.setQuery(query);
-    QByteArray postData(QString("token=%1&filename=%2&content=%3").arg(token).arg(filename).arg(content).toUtf8());
+    QByteArray postData(QString("token=%1&filename=%2&content=%3").arg(token).arg(filename).arg(urlEncode(content)).toUtf8());
     QNetworkRequest request(url);
     request.setHeader(QNetworkRequest::ContentTypeHeader, "application/x-www-form-urlencoded");
     QNetworkReply *reply = manager.post(request,postData);
@@ -259,6 +259,31 @@ void AccountManager::on_deleteFile_finished()
 AccountManager::AccountManager(QWidget *parent):manager(parent)
 {
 
+}
+
+QString AccountManager::urlEncode(QString string)
+{
+    return string
+            .replace("%", "%25")
+            .replace(" ","%20")
+            .replace("\"", "%22")
+            .replace("#", "%23")
+            .replace("&", "%26")
+            .replace("(", "%28")
+            .replace(")", "%29")
+            .replace("+", "%2B")
+            .replace(",", "%2C")
+            .replace("/", "%2F")
+            .replace(":", "%3A")
+            .replace(";", "%3B")
+            .replace("<", "%3C")
+            .replace("=", "%3D")
+            .replace(">", "%3E")
+            .replace("?", "%3F")
+            .replace("@", "%40")
+            .replace("\\", "%5C")
+            .replace("|", "%7C");
+            ;
 }
 
 const QString &AccountManager::getUsername() const

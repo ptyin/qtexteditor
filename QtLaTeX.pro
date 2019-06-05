@@ -1,8 +1,3 @@
-#-------------------------------------------------
-#
-# Project created by QtCreator 2015-05-11T16:52:48
-#
-#-------------------------------------------------
 Release:DEFINES += QT_NO_WARNING_OUTPUT\
 QT_NO_DEBUG_OUTPUT
 

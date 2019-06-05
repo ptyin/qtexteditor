@@ -881,6 +881,9 @@
               <iconset resource="../resources/myqrc.qrc">
                <normaloff>:/images/ico/n-upload.png</normaloff>:/images/ico/n-upload.png</iconset>
              </property>
+             <property name="shortcut">
+              <string>Ctrl+Shift+U</string>
+             </property>
             </widget>
            </item>
            <item>

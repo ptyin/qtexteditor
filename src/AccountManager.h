@@ -39,6 +39,8 @@ public:
 
     const QString &getServer() const;
 
+    static QString urlEncode(QString string);
+
 signals:
     void login_success();
     void return_content(QString content);

@@ -5,7 +5,7 @@ A Qt rich text editor, used for online or offline edit text. Support for exporti
 
 ![](demo/editor.png)
 
-## Fuction
+## Function
 
 ![](demo/Qt-TextEditor.png)
 

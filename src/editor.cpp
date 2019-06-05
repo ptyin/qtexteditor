@@ -760,7 +760,7 @@ void Editor::on_actionopen_triggered()
     if (file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
         recentFileName = file.fileName();
-        setHtml(file.readAll());
+        ui->textEdit->setHtml(file.readAll());
         file.close();
     }
 }
@@ -868,7 +868,7 @@ void Editor::local_filesystem_view_doubleclicked(const QModelIndex &modelIndex)
     if (file.open(QIODevice::ReadOnly | QIODevice::Text))
     {
         recentFileName = dirModel->fileName(modelIndex);
-        setHtml(file.readAll());
+        ui->textEdit->setHtml(file.readAll());
         file.close();
     }
 }
