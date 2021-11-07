@@ -1,0 +1,3 @@
+[submodule "qtexteditor-server"]
+	path = qtexteditor-server
+	url = https://github.com/PTYin/qtexteditor-server
