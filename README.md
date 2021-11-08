@@ -1,7 +1,9 @@
-# Qt TextEditor
+<img align="center" src="demo/qtexteditor.png" />
 
-一个qt制作的在线富文本编辑器，可用于在线多人协作编辑文本，支持导出html，pdf，latex格式
-A Qt rich text editor, used for online or offline edit text. Support for exporting to .html, .pdf, .tex
+<h2 align="center">Qtexteditor</h2>
+
+一个qt制作的在线富文本编辑器，可用于在线多人协作编辑文本，支持导出html，pdf，latex格式。
+A Qt rich text editor, used for online or offline edit text. Support for exporting to .html, .pdf, .tex.
 
 ![](demo/editor.png)
 
@@ -50,9 +52,9 @@ CMakeLists.txt should be like that
 
     cmake_minimum_required(VERSION 3.13)
     project(QtLaTeX)
-
+    
     set(CMAKE_CXX_STANDARD 14)
-
+    
     set(CMAKE_PREFIX_PATH E:/Qt/Qt5.12.3/5.12.3/mingw73_64)
     # Find includes in corresponding build directories
     set(CMAKE_INCLUDE_CURRENT_DIR ON)
@@ -60,10 +62,10 @@ CMakeLists.txt should be like that
     set(CMAKE_AUTOMOC ON)
     # Create code from a list of Qt designer ui files
     set(CMAKE_AUTOUIC ON)
-
+    
     # Find the QtWidgets library
     find_package(Qt5 COMPONENTS Core Widgets Gui Sql Network PrintSupport REQUIRED)
-
+    
     # Populate a CMake variable with the sources
     set(SOURCELIST
             src/login.ui
