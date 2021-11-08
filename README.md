@@ -1,5 +1,6 @@
 <p align="center"><img src="demo/qtexteditor.png" /></p>
-<h2 align="center">Qtexteditor</h2>
+
+---
 
 一个qt制作的在线富文本编辑器，可用于在线多人协作编辑文本，支持导出html，pdf，latex格式。
 A Qt rich text editor, used for online or offline edit text. Support for exporting to .html, .pdf, .tex.
